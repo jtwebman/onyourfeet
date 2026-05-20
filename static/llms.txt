@@ -1,0 +1,24 @@
+# On Your Feet
+
+> A dead-simple stand-up reminder and desk break timer for office workers. Start a timer (30, 45, or 60 minutes); when it ends, take a 5-minute walking break; repeat. Backed by 2023 Columbia research (Duran/Diaz et al.) showing 5-minute light walking every 30 minutes reduces post-meal blood sugar and blood pressure.
+
+The site is a static SvelteKit app with no accounts, no tracking, and no ads. It is available in 13 languages with URL-prefix routing (e.g., `/en/`, `/fr/`, `/ja/`). Source code is open under AGPL-3.0.
+
+## Pages
+
+- [Home (English)](https://onyourfeet.app/en/): The timer interface — pick a duration and start
+- [Why this exists (English)](https://onyourfeet.app/en/why): The peer-reviewed research behind short walking breaks, with full citations and honest caveats
+
+## Source code
+
+- [GitHub repository](https://github.com/jtwebman/onyourfeet): AGPL-3.0-licensed source
+
+## Key research the Why page cites
+
+- Duran AT, Friel CP, Serafini MA, Ensari I, Cheung YK, Diaz KM. *Breaking Up Prolonged Sitting to Improve Cardiometabolic Risk: Dose-Response Analysis of a Randomized Crossover Trial.* Medicine & Science in Sports & Exercise. 2023;55(5):847–855. [PubMed](https://pubmed.ncbi.nlm.nih.gov/36728338/)
+- Ekelund U, Steene-Johannessen J, Brown WJ, et al. *Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? A harmonised meta-analysis of data from more than 1 million men and women.* The Lancet. 2016;388(10051):1302–1310. [PubMed](https://pubmed.ncbi.nlm.nih.gov/27475271/)
+- Bull FC, Al-Ansari SS, Biddle S, et al. *World Health Organization 2020 guidelines on physical activity and sedentary behaviour.* British Journal of Sports Medicine. 2020;54(24):1451–1462. [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC7719906/)
+
+## What it deliberately is not
+
+This app is not a Pomodoro timer, productivity tracker, fitness app, or scheduling tool. It does not gamify breaks, score the user, or push a wellness program. It implements one specific evidence-based intervention — a 30/45/60-minute work cycle followed by a 5-minute walking break — with no other features.
