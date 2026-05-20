@@ -1,18 +1,18 @@
-name: Release & deploy
+name: CI
 
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
-  deploy:
-    name: Deploy to Cloudflare
+  test:
+    name: Type check, build, e2e
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -38,8 +38,3 @@ jobs:
 
       - name: End-to-end tests
         run: npm run test:e2e
-
-      - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
