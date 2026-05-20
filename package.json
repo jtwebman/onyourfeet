@@ -1,7 +1,22 @@
 {
 	"name": "onyourfeet",
+	"description": "A no-frills stand-up reminder and desk break timer for office workers. Start a 30/45/60-minute work timer and get nudged to take a 5-minute walking break.",
 	"private": true,
-	"version": "0.0.1",
+	"version": "1.0.0",
+	"license": "AGPL-3.0-or-later",
+	"homepage": "https://onyourfeet.app",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jtwebman/onyourfeet.git"
+	},
+	"keywords": [
+		"stand-up-reminder",
+		"desk-break-timer",
+		"work-breaks",
+		"sedentary-health",
+		"sveltekit",
+		"cloudflare-workers"
+	],
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
