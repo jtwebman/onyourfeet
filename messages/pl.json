@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "Banalnie proste przypomnienie, by wstać. Włącz minutnik, zrób przerwę, powtórz.",
+
+	"timer_work_for": "Pracuj przez",
+	"timer_unit_minutes_short": "min",
+	"timer_unit_seconds_short": "s",
+	"timer_start": "Start",
+	"timer_cancel": "Anuluj",
+	"timer_next_break_in": "Następna przerwa za",
+	"timer_time_to_stand": "Czas wstać",
+	"timer_take_walk": "Przejdź się 5 minut.",
+	"timer_im_standing": "Stoję",
+	"timer_snooze": "Odłóż o 5 min",
+	"timer_walk_it_out": "Przespaceruj się — wracasz za",
+	"timer_end_early": "Zakończ wcześniej",
+	"timer_nice_work": "Dobra robota",
+	"timer_hit_start_again": "Naciśnij start, gdy znowu usiądziesz.",
+	"timer_done": "Gotowe",
+	"timer_why_link": "Po co to istnieje →",
+
+	"title_alert_stand": "Czas wstać",
+	"title_done": "Dobra robota",
+
+	"notify_time_to_stand": "Czas wstać.",
+	"notify_snooze_finished": "Drzemka skończona. Wstań.",
+	"notify_break_complete": "Przerwa zakończona.",
+
+	"why_title": "Po co to istnieje",
+	"why_meta_description": "Badania stojące za tym, dlaczego krótkie, częste przerwy na chodzenie mają znaczenie — z prawdziwymi cytowaniami, bez przesady.",
+	"why_back_to_timer": "← Wróć do minutnika",
+	"why_intro": "Większość aplikacji z minutnikami dla osób pracujących za biurkiem to przekombinowane narzędzia do planowania. Ta — celowo — nie jest. Istnieje realny powód, dla którego krótkie przerwy na chodzenie mają znaczenie — oto co naprawdę mówią badania, z cytowaniami i bez przesady.",
+
+	"why_section_headline": "Najważniejszy wniosek",
+	"why_headline_p1": "W randomizowanym badaniu krzyżowym z 2023 r. na Columbia naukowcy przetestowali pięć różnych schematów przerw od siedzenia podczas 8-godzinnych sesji laboratoryjnych. Tylko jeden schemat istotnie obniżył poposiłkowy poziom cukru we krwi: 5 minut lekkiego chodzenia co 30 minut.",
+	"why_headline_bullet1": "Lżejsze dawki (1 min/30 min, 1 min/60 min, 5 min/60 min) obniżyły ciśnienie, ale nie poziom glukozy.",
+	"why_headline_bullet2": "Dawka 5 min co 30 min ruszyła obie wartości.",
+	"why_headline_bullet3": "Poposiłkowe iAUC glukozy spadło o około 12 jednostek (p = 0.017); skurczowe ciśnienie spadło o 4–5 mmHg we wszystkich wariantach przerw.",
+	"why_headline_caveat": "Ważne zastrzeżenia: badanie było małe (n = 11), ostre (pomiary laboratoryjne z jednego dnia) i nie dowodzi efektów długoterminowych. Daje natomiast najczystsze dostępne dowody zależności dawka–odpowiedź — a praktyczny wniosek jest taki, że częstotliwość liczy się tak samo jak czas trwania.",
+
+	"why_section_sitting": "Siedzenie ma własne ryzyko",
+	"why_sitting_p1": "Metaanaliza w Lancet z 2016 r. zebrała dane od ponad 1 million osób z 16 badań. Siedzenie dłużej niż 8 godzin dziennie wiązało się ze wzrostem śmiertelności ogólnej o 9–59% — a wielkość ryzyka mocno zależała od tego, ile dana osoba ćwiczyła.",
+	"why_sitting_p2": "Uczciwy niuans: osoby z najwyższego kwartyla aktywności (około 60–75 minut umiarkowanego wysiłku dziennie) w dużej mierze niwelowały ryzyko śmierci związane z siedzeniem. To dużo ruchu. Dla większości osób spełniających standardowe zalecenie ~150 min/tydzień długie siedzenie wciąż dokłada wymierne ryzyko.",
+	"why_sitting_p3": "Nie musisz więc wybierać między siłownią a przerwami na chodzenie. Potrzebujesz obu. Zmienia się to, że przerwy na chodzenie nie są dodatkowym plusem — adresują coś, czego zwykła rutyna treningowa do końca nie naprawia.",
+
+	"why_section_who": "Co mówi WHO",
+	"why_who_quote": "Dorośli powinni ograniczać czas spędzany w sposób siedzący. Zastępowanie czasu siedzącego aktywnością fizyczną o dowolnej intensywności (także lekkiej) przynosi korzyści zdrowotne.",
+	"why_who_caveat": "Ważny punkt uczciwości: WHO nie ustaliła konkretnego progu czasowego (np. \"przerwa co 30 minut\"). Dowody nie były wystarczająco mocne. Jeśli ktoś mówi ci, że WHO zaleca konkretny odstęp między przerwami, to po prostu sobie to zmyślił.",
+
+	"why_section_app": "Co robi ta aplikacja",
+	"why_app_bullet1": "Przypomina o przerwie co 30, 45 lub 60 minut — Ty wybierasz.",
+	"why_app_bullet2": "Domyślnie 5-minutowe przerwy, zgodne ze skuteczną dawką ze studium Diaz.",
+	"why_app_bullet3": "Nie liczy serii, nie wystawia ocen ani nie wyrzuca Ci wyrzutów sumienia.",
+	"why_app_bullet4": "Nie zastępuje prawdziwego treningu.",
+	"why_app_outro": "Włącz minutnik, idź na spacer, gdy zadzwoni, wróć, włącz znowu. To wszystko.",
+
+	"why_references": "Bibliografia",
+	"why_translation_notice": "Strona przetłumaczona maszynowo. Wersją wzorcową jest wersja angielska: ",
+	"why_translation_notice_link": "czytaj po angielsku"
+}

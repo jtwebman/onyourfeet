@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "A dead-simple stand-up reminder. Start a timer, take a break, repeat.",
+
+	"timer_work_for": "Work for",
+	"timer_unit_minutes_short": "min",
+	"timer_unit_seconds_short": "sec",
+	"timer_start": "Start",
+	"timer_cancel": "Cancel",
+	"timer_next_break_in": "Next break in",
+	"timer_time_to_stand": "Time to stand up",
+	"timer_take_walk": "Take a 5-minute walk.",
+	"timer_im_standing": "I'm standing up",
+	"timer_snooze": "Snooze 5 min",
+	"timer_walk_it_out": "Walk it out — back in",
+	"timer_end_early": "End early",
+	"timer_nice_work": "Nice work",
+	"timer_hit_start_again": "Hit start when you sit back down.",
+	"timer_done": "Done",
+	"timer_why_link": "Why this exists →",
+
+	"title_alert_stand": "Time to stand",
+	"title_done": "Nice work",
+
+	"notify_time_to_stand": "Time to stand up.",
+	"notify_snooze_finished": "Snooze finished. Stand up.",
+	"notify_break_complete": "Break complete.",
+
+	"why_title": "Why this exists",
+	"why_meta_description": "The research behind why short, frequent walking breaks matter — with real citations, no overclaiming.",
+	"why_back_to_timer": "← Back to timer",
+	"why_intro": "Most timer apps for desk workers are over-engineered scheduling tools. This one is deliberately not. There's a real reason short walking breaks matter — here's what the research actually says, with citations, no overclaiming.",
+
+	"why_section_headline": "The headline finding",
+	"why_headline_p1": "In a 2023 randomized crossover trial at Columbia, researchers tested five different sitting-break patterns over 8-hour lab sessions. Only one pattern significantly lowered post-meal blood sugar: 5 minutes of light walking every 30 minutes.",
+	"why_headline_bullet1": "Lighter doses (1 min/30 min, 1 min/60 min, 5 min/60 min) reduced blood pressure but not glucose.",
+	"why_headline_bullet2": "The 5-min-every-30-min dose moved both.",
+	"why_headline_bullet3": "Postprandial glucose iAUC dropped roughly 12 units (p = 0.017); systolic BP dropped 4–5 mmHg across all break conditions.",
+	"why_headline_caveat": "Important caveats: the study was small (n = 11), acute (single-day lab measures), and doesn't prove long-term outcomes. What it does give us is the cleanest dose-response evidence available — and the practical takeaway is that frequency matters as much as duration.",
+
+	"why_section_sitting": "Sitting has its own risk",
+	"why_sitting_p1": "A 2016 Lancet meta-analysis pooled data from over 1 million people across 16 studies. Sitting more than 8 hours a day was associated with a 9–59% increase in all-cause mortality — and the size of the risk depended heavily on how much someone exercised.",
+	"why_sitting_p2": "The honest nuance: people in the highest activity quartile (around 60–75 minutes of moderate exercise per day) did largely offset sitting's mortality risk. That's a lot of exercise. For most people hitting the standard ~150 min/week recommendation, prolonged sitting still adds measurable risk.",
+	"why_sitting_p3": "So you don't have to choose between the gym and walking breaks. You need both. What changes is that walking breaks aren't bonus credit — they're addressing something a normal exercise routine doesn't fully fix.",
+
+	"why_section_who": "What the WHO says",
+	"why_who_quote": "Adults should limit the amount of time spent being sedentary. Replacing sedentary time with physical activity of any intensity (including light intensity) provides health benefits.",
+	"why_who_caveat": "Important honesty point: the WHO did not set a specific time threshold (e.g., \"break every 30 minutes\"). The evidence wasn't strong enough. If someone tells you the WHO recommends a specific break interval, they made it up.",
+
+	"why_section_app": "What this app does",
+	"why_app_bullet1": "Nudges you to break every 30, 45, or 60 minutes — your choice.",
+	"why_app_bullet2": "Defaults to 5-minute breaks, matching the Diaz study's effective dose.",
+	"why_app_bullet3": "Doesn't track streaks, score you, or guilt you.",
+	"why_app_bullet4": "Doesn't replace your actual workout.",
+	"why_app_outro": "Start the timer, take a walk when it goes off, come back, start it again. That's it.",
+
+	"why_references": "References",
+	"why_translation_notice": "Machine-translated page. The English version is the source of truth: ",
+	"why_translation_notice_link": "read in English"
+}

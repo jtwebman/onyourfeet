@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "Un recordatorio para levantarte, sencillísimo. Inicia un temporizador, toma un descanso, repite.",
+
+	"timer_work_for": "Trabajar durante",
+	"timer_unit_minutes_short": "min",
+	"timer_unit_seconds_short": "s",
+	"timer_start": "Iniciar",
+	"timer_cancel": "Cancelar",
+	"timer_next_break_in": "Próximo descanso en",
+	"timer_time_to_stand": "Hora de levantarte",
+	"timer_take_walk": "Camina 5 minutos.",
+	"timer_im_standing": "Estoy de pie",
+	"timer_snooze": "Posponer 5 min",
+	"timer_walk_it_out": "A caminar — vuelves en",
+	"timer_end_early": "Terminar antes",
+	"timer_nice_work": "Bien hecho",
+	"timer_hit_start_again": "Pulsa iniciar cuando vuelvas a sentarte.",
+	"timer_done": "Listo",
+	"timer_why_link": "Por qué existe esto →",
+
+	"title_alert_stand": "Hora de levantarte",
+	"title_done": "Bien hecho",
+
+	"notify_time_to_stand": "Hora de levantarte.",
+	"notify_snooze_finished": "Se acabó la pausa. A levantarse.",
+	"notify_break_complete": "Descanso completado.",
+
+	"why_title": "Por qué existe esto",
+	"why_meta_description": "La investigación detrás de por qué importan las pausas cortas y frecuentes para caminar — con citas reales, sin exagerar.",
+	"why_back_to_timer": "← Volver al temporizador",
+	"why_intro": "La mayoría de las apps de temporizador para oficinistas son herramientas de planificación sobrecargadas. Esta, deliberadamente, no lo es. Hay una razón real por la que importan las pausas cortas para caminar — esto es lo que dice realmente la investigación, con citas y sin exagerar.",
+
+	"why_section_headline": "El hallazgo principal",
+	"why_headline_p1": "En un ensayo cruzado aleatorizado de 2023 en Columbia, los investigadores probaron cinco patrones distintos de pausas durante sesiones de laboratorio de 8 horas. Solo un patrón redujo significativamente la glucosa posprandial: 5 minutos de caminata ligera cada 30 minutos.",
+	"why_headline_bullet1": "Dosis menores (1 min/30 min, 1 min/60 min, 5 min/60 min) redujeron la presión arterial, pero no la glucosa.",
+	"why_headline_bullet2": "La dosis de 5 min cada 30 min movió ambas.",
+	"why_headline_bullet3": "La iAUC de glucosa posprandial bajó aproximadamente 12 unidades (p = 0.017); la presión sistólica bajó 4–5 mmHg en todas las condiciones de pausa.",
+	"why_headline_caveat": "Matices importantes: el estudio fue pequeño (n = 11), agudo (mediciones de laboratorio de un solo día) y no demuestra resultados a largo plazo. Lo que sí nos da es la evidencia dosis-respuesta más limpia disponible — y la conclusión práctica es que la frecuencia importa tanto como la duración.",
+
+	"why_section_sitting": "Estar sentado tiene su propio riesgo",
+	"why_sitting_p1": "Un metaanálisis de Lancet de 2016 reunió datos de más de 1 million de personas en 16 estudios. Estar sentado más de 8 horas al día se asoció con un aumento del 9–59% en la mortalidad por cualquier causa — y la magnitud del riesgo dependía mucho de cuánto ejercicio hiciera la persona.",
+	"why_sitting_p2": "El matiz honesto: las personas en el cuartil de mayor actividad (alrededor de 60–75 minutos de ejercicio moderado al día) sí compensaron en gran medida el riesgo de mortalidad asociado a estar sentadas. Eso es mucho ejercicio. Para la mayoría que cumple la recomendación estándar de unos 150 min/semana, estar sentado mucho tiempo sigue añadiendo un riesgo medible.",
+	"why_sitting_p3": "Así que no tienes que elegir entre el gimnasio y las pausas para caminar. Necesitas ambos. Lo que cambia es que las pausas para caminar no son un crédito extra — abordan algo que una rutina normal de ejercicio no termina de arreglar.",
+
+	"why_section_who": "Lo que dice la WHO",
+	"why_who_quote": "Los adultos deberían limitar el tiempo que pasan siendo sedentarios. Sustituir el tiempo sedentario por actividad física de cualquier intensidad (incluso ligera) aporta beneficios para la salud.",
+	"why_who_caveat": "Punto importante de honestidad: la WHO no fijó un umbral de tiempo específico (por ejemplo, \"pausa cada 30 minutos\"). La evidencia no era lo bastante sólida. Si alguien te dice que la WHO recomienda un intervalo concreto de pausas, se lo está inventando.",
+
+	"why_section_app": "Lo que hace esta app",
+	"why_app_bullet1": "Te avisa para que hagas una pausa cada 30, 45 o 60 minutos — tú decides.",
+	"why_app_bullet2": "Por defecto, pausas de 5 minutos, igualando la dosis efectiva del estudio de Diaz.",
+	"why_app_bullet3": "No cuenta rachas, no te puntúa ni te hace sentir culpable.",
+	"why_app_bullet4": "No sustituye tu entrenamiento real.",
+	"why_app_outro": "Inicia el temporizador, camina cuando suene, vuelve, vuelve a iniciarlo. Eso es todo.",
+
+	"why_references": "Referencias",
+	"why_translation_notice": "Página traducida por máquina. La versión en inglés es la fuente fiable: ",
+	"why_translation_notice_link": "leer en inglés"
+}

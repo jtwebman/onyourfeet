@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "Een doodsimpele opsta-herinnering. Start een timer, neem een pauze, herhaal.",
+
+	"timer_work_for": "Werken voor",
+	"timer_unit_minutes_short": "min",
+	"timer_unit_seconds_short": "s",
+	"timer_start": "Start",
+	"timer_cancel": "Annuleren",
+	"timer_next_break_in": "Volgende pauze over",
+	"timer_time_to_stand": "Tijd om op te staan",
+	"timer_take_walk": "Loop 5 minuten.",
+	"timer_im_standing": "Ik sta",
+	"timer_snooze": "5 min uitstellen",
+	"timer_walk_it_out": "Loop het eruit — terug over",
+	"timer_end_early": "Eerder stoppen",
+	"timer_nice_work": "Goed gedaan",
+	"timer_hit_start_again": "Druk op start zodra je weer zit.",
+	"timer_done": "Klaar",
+	"timer_why_link": "Waarom dit bestaat →",
+
+	"title_alert_stand": "Tijd om op te staan",
+	"title_done": "Goed gedaan",
+
+	"notify_time_to_stand": "Tijd om op te staan.",
+	"notify_snooze_finished": "Snooze voorbij. Sta op.",
+	"notify_break_complete": "Pauze voltooid.",
+
+	"why_title": "Waarom dit bestaat",
+	"why_meta_description": "Het onderzoek achter waarom korte, frequente loopdokpauzes ertoe doen — met echte bronnen, zonder overdrijving.",
+	"why_back_to_timer": "← Terug naar de timer",
+	"why_intro": "De meeste timer-apps voor bureauwerkers zijn overontworpen planningstools. Deze is dat bewust niet. Er is een echte reden waarom korte loopdokpauzes ertoe doen — hier staat wat het onderzoek echt zegt, met bronnen en zonder overdrijving.",
+
+	"why_section_headline": "De belangrijkste bevinding",
+	"why_headline_p1": "In een gerandomiseerde cross-over-studie uit 2023 aan Columbia testten onderzoekers vijf verschillende patronen van zitpauzes tijdens labsessies van 8 uur. Slechts één patroon verlaagde de bloedsuiker na de maaltijd significant: 5 minuten licht lopen elke 30 minuten.",
+	"why_headline_bullet1": "Lichtere doseringen (1 min/30 min, 1 min/60 min, 5 min/60 min) verlaagden de bloeddruk, maar niet de glucose.",
+	"why_headline_bullet2": "De dosering 5 min per 30 min liet beide bewegen.",
+	"why_headline_bullet3": "De postprandiale glucose-iAUC daalde met ongeveer 12 eenheden (p = 0.017); de systolische bloeddruk daalde 4–5 mmHg in alle pauzecondities.",
+	"why_headline_caveat": "Belangrijke kanttekeningen: de studie was klein (n = 11), acuut (labmetingen op één dag) en bewijst geen langetermijnuitkomsten. Wat ze wel oplevert is het schoonste dosis-responsbewijs dat er is — en de praktische les is dat frequentie net zo belangrijk is als duur.",
+
+	"why_section_sitting": "Zitten heeft zijn eigen risico",
+	"why_sitting_p1": "Een meta-analyse uit Lancet uit 2016 bundelde gegevens van meer dan 1 million mensen uit 16 studies. Meer dan 8 uur per dag zitten werd gekoppeld aan een toename van 9–59% in sterfte door alle oorzaken — en de grootte van het risico hing sterk af van hoeveel iemand bewoog.",
+	"why_sitting_p2": "De eerlijke nuance: mensen in het hoogste activiteitenkwartiel (rond 60–75 minuten matige beweging per dag) compenseerden het sterfterisico door zitten grotendeels. Dat is veel beweging. Voor de meeste mensen die de standaardaanbeveling van ~150 min/week halen, levert langdurig zitten nog steeds een meetbaar risico op.",
+	"why_sitting_p3": "Je hoeft dus niet te kiezen tussen de sportschool en loopdokpauzes. Je hebt beide nodig. Wat verandert is dat loopdokpauzes geen extraatje zijn — ze pakken iets aan dat een normale trainingsroutine niet helemaal oplost.",
+
+	"why_section_who": "Wat de WHO zegt",
+	"why_who_quote": "Volwassenen zouden de tijd die ze sedentair doorbrengen moeten beperken. Sedentaire tijd vervangen door fysieke activiteit van welke intensiteit dan ook (ook licht) levert gezondheidsvoordelen op.",
+	"why_who_caveat": "Belangrijk eerlijk punt: de WHO heeft geen specifieke tijdsdrempel vastgesteld (bv. \"pauze elke 30 minuten\"). Het bewijs was er niet sterk genoeg voor. Als iemand je vertelt dat de WHO een specifiek pauze-interval aanbeveelt, heeft die persoon dat verzonnen.",
+
+	"why_section_app": "Wat deze app doet",
+	"why_app_bullet1": "Geeft je een seintje voor een pauze elke 30, 45 of 60 minuten — jouw keuze.",
+	"why_app_bullet2": "Standaard pauzes van 5 minuten, in lijn met de effectieve dosering uit de Diaz-studie.",
+	"why_app_bullet3": "Houdt geen streaks bij, geeft je geen score en geen schuldgevoel.",
+	"why_app_bullet4": "Vervangt je echte workout niet.",
+	"why_app_outro": "Start de timer, loop een stukje als hij afgaat, kom terug, start hem weer. Meer is het niet.",
+
+	"why_references": "Bronnen",
+	"why_translation_notice": "Machinaal vertaalde pagina. De Engelse versie is leidend: ",
+	"why_translation_notice_link": "lees in het Engels"
+}

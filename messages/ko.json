@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "정말 단순한 일어서기 알림. 타이머 시작, 휴식, 반복.",
+
+	"timer_work_for": "작업 시간",
+	"timer_unit_minutes_short": "분",
+	"timer_unit_seconds_short": "초",
+	"timer_start": "시작",
+	"timer_cancel": "취소",
+	"timer_next_break_in": "다음 휴식까지",
+	"timer_time_to_stand": "일어설 시간",
+	"timer_take_walk": "5분간 걷기.",
+	"timer_im_standing": "일어섰어요",
+	"timer_snooze": "5분 미루기",
+	"timer_walk_it_out": "걷고 오기 — 돌아오기까지",
+	"timer_end_early": "일찍 끝내기",
+	"timer_nice_work": "수고했어요",
+	"timer_hit_start_again": "다시 앉으면 시작을 눌러 주세요.",
+	"timer_done": "완료",
+	"timer_why_link": "이 앱이 존재하는 이유 →",
+
+	"title_alert_stand": "일어설 시간",
+	"title_done": "수고했어요",
+
+	"notify_time_to_stand": "일어설 시간입니다.",
+	"notify_snooze_finished": "다시 알림이 끝났어요. 일어나세요.",
+	"notify_break_complete": "휴식 완료.",
+
+	"why_title": "이 앱이 존재하는 이유",
+	"why_meta_description": "짧고 잦은 걷기 휴식이 왜 중요한지에 대한 연구 — 실제 인용과 함께, 과장은 빼고.",
+	"why_back_to_timer": "← 타이머로 돌아가기",
+	"why_intro": "사무직을 위한 타이머 앱 대부분은 과하게 만든 스케줄링 도구입니다. 이건 일부러 그러지 않았습니다. 짧은 걷기 휴식이 중요한 데에는 실제 이유가 있습니다 — 연구가 실제로 말하는 바를 인용과 함께 과장 없이 정리했습니다.",
+
+	"why_section_headline": "핵심 결과",
+	"why_headline_p1": "2023년 Columbia에서 진행된 무작위 교차 시험에서 연구자들은 8시간 실험 세션 동안 다섯 가지 다른 앉기 중단 패턴을 시험했습니다. 식후 혈당을 유의하게 낮춘 패턴은 단 하나 — 30분마다 5분의 가벼운 걷기였습니다.",
+	"why_headline_bullet1": "더 가벼운 용량(1분/30분, 1분/60분, 5분/60분)은 혈압은 낮췄지만 혈당은 낮추지 못했습니다.",
+	"why_headline_bullet2": "30분마다 5분 용량은 둘 다 움직였습니다.",
+	"why_headline_bullet3": "식후 혈당 iAUC가 약 12 단위 감소했고(p = 0.017), 모든 휴식 조건에서 수축기 혈압이 4~5 mmHg 감소했습니다.",
+	"why_headline_caveat": "중요한 단서: 이 연구는 소규모(n = 11)이고 급성(하루 단위의 실험실 측정)이며 장기 결과를 증명하지는 않습니다. 다만 현재 얻을 수 있는 가장 명료한 용량-반응 근거를 제공하며, 실용적 결론은 \"빈도가 시간만큼 중요하다\"는 것입니다.",
+
+	"why_section_sitting": "앉아 있는 것 자체에 위험이 있다",
+	"why_sitting_p1": "2016년 Lancet 메타분석은 16개 연구의 1 million명이 넘는 데이터를 모았습니다. 하루 8시간 이상 앉아 있는 것은 전체 사망률 9~59% 증가와 연관되었고, 위험의 크기는 운동을 얼마나 하느냐에 크게 좌우되었습니다.",
+	"why_sitting_p2": "정직한 뉘앙스: 활동량 최상위 사분위(하루 약 60~75분의 중강도 운동) 사람들은 앉아 있는 것에 따른 사망 위험을 대부분 상쇄했습니다. 운동량이 꽤 많은 편입니다. 표준 권고치인 주 ~150분을 채우는 대부분의 사람에게도 오래 앉아 있는 것은 여전히 측정 가능한 위험을 더합니다.",
+	"why_sitting_p3": "그러니 헬스장과 걷기 휴식 중 하나를 고를 필요는 없습니다. 둘 다 필요합니다. 달라지는 점은 걷기 휴식이 보너스 점수가 아니라 — 일반적인 운동 루틴만으로는 다 해결되지 않는 무언가에 대응한다는 사실입니다.",
+
+	"why_section_who": "WHO의 입장",
+	"why_who_quote": "성인은 앉아서 보내는 시간을 줄여야 합니다. 좌식 시간을 어떤 강도(가벼운 강도 포함)의 신체 활동으로든 대체하는 것은 건강상의 이점을 가져옵니다.",
+	"why_who_caveat": "정직하게 짚을 점: WHO는 구체적인 시간 기준(예: \"30분마다 휴식\")을 정하지 않았습니다. 근거가 충분히 강하지 않았기 때문입니다. 누군가 WHO가 특정 휴식 간격을 권고한다고 말한다면, 그건 지어낸 말입니다.",
+
+	"why_section_app": "이 앱이 하는 일",
+	"why_app_bullet1": "30분, 45분 또는 60분마다 휴식을 권합니다 — 선택은 본인 몫.",
+	"why_app_bullet2": "기본값은 5분 휴식 — Diaz 연구의 유효 용량에 맞췄습니다.",
+	"why_app_bullet3": "연속 기록을 세거나, 점수를 매기거나, 죄책감을 주지 않습니다.",
+	"why_app_bullet4": "실제 운동을 대신하지는 않습니다.",
+	"why_app_outro": "타이머를 시작하고, 울리면 걷고, 돌아와서 다시 시작. 그게 전부입니다.",
+
+	"why_references": "참고문헌",
+	"why_translation_notice": "기계 번역된 페이지입니다. 영어 원문이 기준입니다: ",
+	"why_translation_notice_link": "영어로 읽기"
+}

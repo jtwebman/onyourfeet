@@ -1,0 +1,16 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "onyourfeet",
+	// Pinned to the personal Cloudflare account. Wrangler will refuse to deploy
+	// if the logged-in user can't access this account.
+	"account_id": "7001118f85b48a64b8239b870e497802",
+	"compatibility_date": "2026-05-20",
+	"compatibility_flags": ["nodejs_compat"],
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"workers_dev": true,
+	"preview_urls": true
+}

@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "极简的起身提醒。开始计时、休息、再来一次。",
+
+	"timer_work_for": "工作时长",
+	"timer_unit_minutes_short": "分钟",
+	"timer_unit_seconds_short": "秒",
+	"timer_start": "开始",
+	"timer_cancel": "取消",
+	"timer_next_break_in": "下次休息还有",
+	"timer_time_to_stand": "该起身了",
+	"timer_take_walk": "去走 5 分钟。",
+	"timer_im_standing": "我已起身",
+	"timer_snooze": "推迟 5 分钟",
+	"timer_walk_it_out": "去走走 — 回来还有",
+	"timer_end_early": "提前结束",
+	"timer_nice_work": "干得不错",
+	"timer_hit_start_again": "重新坐下时再按开始。",
+	"timer_done": "完成",
+	"timer_why_link": "为什么有这个 →",
+
+	"title_alert_stand": "该起身了",
+	"title_done": "干得不错",
+
+	"notify_time_to_stand": "该起身了。",
+	"notify_snooze_finished": "推迟时间到。起身吧。",
+	"notify_break_complete": "休息结束。",
+
+	"why_title": "为什么有这个",
+	"why_meta_description": "为什么短而频繁的走动休息有意义 —— 用真实文献支持,不夸大。",
+	"why_back_to_timer": "← 返回计时器",
+	"why_intro": "面向桌前工作者的大多数计时器应用都是过度设计的日程工具。这一款故意不是。短走动休息确实有用 —— 这里讲研究真正说了什么,有引用,不夸大。",
+
+	"why_section_headline": "核心发现",
+	"why_headline_p1": "在 2023 年 Columbia 的一项随机交叉试验中,研究者在 8 小时实验里测试了五种不同的久坐打断模式。只有一种显著降低了餐后血糖:每 30 分钟走 5 分钟轻度活动。",
+	"why_headline_bullet1": "较轻剂量(1 分钟/30 分钟、1 分钟/60 分钟、5 分钟/60 分钟)降低了血压,但没有降低血糖。",
+	"why_headline_bullet2": "每 30 分钟 5 分钟这一剂量两项指标都动了。",
+	"why_headline_bullet3": "餐后血糖 iAUC 大约下降 12 个单位(p = 0.017);所有休息条件下,收缩压都下降了 4–5 mmHg。",
+	"why_headline_caveat": "重要前提:研究规模小(n = 11),为急性(单日实验室测量),并不证明长期效果。它给出的是目前最清晰的剂量–反应证据 —— 实用结论是:频率和时长同样重要。",
+
+	"why_section_sitting": "久坐本身就有风险",
+	"why_sitting_p1": "2016 年 Lancet 的一项荟萃分析汇总了 16 项研究、超过 1 million 人的数据。每天久坐超过 8 小时,与全因死亡率上升 9–59% 相关 —— 风险大小在很大程度上取决于一个人锻炼多少。",
+	"why_sitting_p2": "诚实的细节:活动量最高四分位的人(每天约 60–75 分钟中等强度运动)在很大程度上抵消了久坐带来的死亡风险。这运动量不小。对达到标准建议 ~150 分钟/周的大多数人来说,长时间久坐仍会带来可测量的额外风险。",
+	"why_sitting_p3": "所以你不必在健身房和走动休息之间二选一。两者都需要。区别在于:走动休息不是加分项 —— 它处理的是普通锻炼习惯无法完全解决的问题。",
+
+	"why_section_who": "WHO 怎么说",
+	"why_who_quote": "成人应限制久坐时间。用任何强度(包括轻度)的身体活动替代久坐时间都会带来健康益处。",
+	"why_who_caveat": "需要诚实指出:WHO 并未设定具体的时间阈值(比如\"每 30 分钟休息一次\")。证据还不够强。如果有人告诉你 WHO 推荐某个特定的休息间隔,那是他自己编的。",
+
+	"why_section_app": "这款应用做什么",
+	"why_app_bullet1": "每 30、45 或 60 分钟提醒你休息 —— 你来选。",
+	"why_app_bullet2": "默认 5 分钟休息,对应 Diaz 研究中有效的剂量。",
+	"why_app_bullet3": "不计连胜、不打分、不让你内疚。",
+	"why_app_bullet4": "不能替代真正的训练。",
+	"why_app_outro": "开始计时,响了就去走,回来再开始。就这样。",
+
+	"why_references": "参考文献",
+	"why_translation_notice": "机器翻译页面。英文版为准: ",
+	"why_translation_notice_link": "阅读英文版"
+}

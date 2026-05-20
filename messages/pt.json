@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "Um lembrete supersimples para levantar. Inicie o timer, faça uma pausa, repita.",
+
+	"timer_work_for": "Trabalhar por",
+	"timer_unit_minutes_short": "min",
+	"timer_unit_seconds_short": "s",
+	"timer_start": "Iniciar",
+	"timer_cancel": "Cancelar",
+	"timer_next_break_in": "Próxima pausa em",
+	"timer_time_to_stand": "Hora de levantar",
+	"timer_take_walk": "Dê uma caminhada de 5 minutos.",
+	"timer_im_standing": "Estou de pé",
+	"timer_snooze": "Adiar 5 min",
+	"timer_walk_it_out": "Vai caminhar — volta em",
+	"timer_end_early": "Terminar antes",
+	"timer_nice_work": "Mandou bem",
+	"timer_hit_start_again": "Toque em iniciar quando voltar a sentar.",
+	"timer_done": "Pronto",
+	"timer_why_link": "Por que isso existe →",
+
+	"title_alert_stand": "Hora de levantar",
+	"title_done": "Mandou bem",
+
+	"notify_time_to_stand": "Hora de levantar.",
+	"notify_snooze_finished": "A soneca acabou. Levante-se.",
+	"notify_break_complete": "Pausa concluída.",
+
+	"why_title": "Por que isso existe",
+	"why_meta_description": "A pesquisa por trás do motivo pelo qual pausas curtas e frequentes para caminhar importam — com citações reais, sem exagero.",
+	"why_back_to_timer": "← Voltar ao timer",
+	"why_intro": "A maioria dos apps de timer para quem trabalha em escritório é uma ferramenta de agendamento superdimensionada. Este, de propósito, não é. Existe um motivo real para pausas curtas para caminhar importarem — aqui está o que a pesquisa realmente diz, com citações e sem exagero.",
+
+	"why_section_headline": "O principal achado",
+	"why_headline_p1": "Em um ensaio cruzado randomizado de 2023 em Columbia, pesquisadores testaram cinco padrões diferentes de pausas durante sessões de laboratório de 8 horas. Apenas um padrão reduziu significativamente a glicemia pós-refeição: 5 minutos de caminhada leve a cada 30 minutos.",
+	"why_headline_bullet1": "Doses menores (1 min/30 min, 1 min/60 min, 5 min/60 min) reduziram a pressão arterial, mas não a glicose.",
+	"why_headline_bullet2": "A dose de 5 min a cada 30 min mexeu nas duas.",
+	"why_headline_bullet3": "A iAUC da glicose pós-prandial caiu cerca de 12 unidades (p = 0.017); a pressão sistólica caiu 4–5 mmHg em todas as condições de pausa.",
+	"why_headline_caveat": "Ressalvas importantes: o estudo foi pequeno (n = 11), agudo (medidas de laboratório de um único dia) e não comprova desfechos de longo prazo. O que ele dá é a evidência dose-resposta mais limpa disponível — e a conclusão prática é que a frequência importa tanto quanto a duração.",
+
+	"why_section_sitting": "Ficar sentado tem o próprio risco",
+	"why_sitting_p1": "Uma meta-análise da Lancet de 2016 reuniu dados de mais de 1 million de pessoas em 16 estudos. Ficar sentado mais de 8 horas por dia foi associado a um aumento de 9–59% na mortalidade por todas as causas — e o tamanho do risco dependia bastante de quanto a pessoa se exercitava.",
+	"why_sitting_p2": "A nuance honesta: pessoas no quartil de maior atividade (cerca de 60–75 minutos de exercício moderado por dia) compensaram em grande parte o risco de mortalidade do tempo sentado. É bastante exercício. Para a maioria que cumpre a recomendação padrão de aproximadamente 150 min/semana, o tempo prolongado sentado ainda acrescenta um risco mensurável.",
+	"why_sitting_p3": "Então você não precisa escolher entre academia e pausas para caminhar. Precisa dos dois. O que muda é que as pausas para caminhar não são crédito extra — elas abordam algo que uma rotina normal de exercício não resolve totalmente.",
+
+	"why_section_who": "O que a WHO diz",
+	"why_who_quote": "Adultos devem limitar o tempo passado em comportamento sedentário. Substituir tempo sedentário por atividade física de qualquer intensidade (inclusive leve) traz benefícios à saúde.",
+	"why_who_caveat": "Ponto importante de honestidade: a WHO não definiu um limite específico de tempo (por exemplo, \"pausa a cada 30 minutos\"). A evidência não era forte o suficiente. Se alguém disser que a WHO recomenda um intervalo específico de pausas, essa pessoa inventou.",
+
+	"why_section_app": "O que este app faz",
+	"why_app_bullet1": "Avisa para você fazer uma pausa a cada 30, 45 ou 60 minutos — você escolhe.",
+	"why_app_bullet2": "Pausas de 5 minutos por padrão, batendo com a dose eficaz do estudo de Diaz.",
+	"why_app_bullet3": "Não conta sequências, não te pontua nem te culpa.",
+	"why_app_bullet4": "Não substitui seu treino de verdade.",
+	"why_app_outro": "Inicie o timer, dê uma caminhada quando tocar, volte, inicie de novo. É só isso.",
+
+	"why_references": "Referências",
+	"why_translation_notice": "Página traduzida por máquina. A versão em inglês é a fonte oficial: ",
+	"why_translation_notice_link": "ler em inglês"
+}

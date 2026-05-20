@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "Un rappel ultra-simple pour se lever. Lance un minuteur, fais une pause, recommence.",
+
+	"timer_work_for": "Travailler pendant",
+	"timer_unit_minutes_short": "min",
+	"timer_unit_seconds_short": "s",
+	"timer_start": "Démarrer",
+	"timer_cancel": "Annuler",
+	"timer_next_break_in": "Prochaine pause dans",
+	"timer_time_to_stand": "C'est l'heure de se lever",
+	"timer_take_walk": "Marche 5 minutes.",
+	"timer_im_standing": "Je suis debout",
+	"timer_snooze": "Reporter 5 min",
+	"timer_walk_it_out": "Va marcher — retour dans",
+	"timer_end_early": "Terminer avant",
+	"timer_nice_work": "Bien joué",
+	"timer_hit_start_again": "Appuie sur démarrer quand tu te rassois.",
+	"timer_done": "Terminé",
+	"timer_why_link": "Pourquoi ça existe →",
+
+	"title_alert_stand": "C'est l'heure de se lever",
+	"title_done": "Bien joué",
+
+	"notify_time_to_stand": "C'est l'heure de se lever.",
+	"notify_snooze_finished": "Report terminé. Debout.",
+	"notify_break_complete": "Pause terminée.",
+
+	"why_title": "Pourquoi ça existe",
+	"why_meta_description": "La recherche derrière l'importance des pauses-marche courtes et fréquentes — avec de vraies citations, sans exagération.",
+	"why_back_to_timer": "← Retour au minuteur",
+	"why_intro": "La plupart des apps de minuteur pour les travailleurs de bureau sont des outils de planification suringéniés. Celle-ci, volontairement, ne l'est pas. Il y a une vraie raison pour laquelle de courtes pauses-marche comptent — voici ce que dit réellement la recherche, avec citations et sans exagération.",
+
+	"why_section_headline": "Le résultat principal",
+	"why_headline_p1": "Dans un essai croisé randomisé de 2023 à Columbia, les chercheurs ont testé cinq schémas de pauses différents lors de sessions de laboratoire de 8 heures. Un seul schéma a significativement abaissé la glycémie postprandiale : 5 minutes de marche légère toutes les 30 minutes.",
+	"why_headline_bullet1": "Des doses plus faibles (1 min/30 min, 1 min/60 min, 5 min/60 min) ont réduit la tension artérielle, mais pas la glycémie.",
+	"why_headline_bullet2": "La dose de 5 min toutes les 30 min a fait bouger les deux.",
+	"why_headline_bullet3": "L'iAUC de la glycémie postprandiale a baissé d'environ 12 unités (p = 0.017) ; la tension systolique a baissé de 4–5 mmHg dans toutes les conditions de pause.",
+	"why_headline_caveat": "Réserves importantes : l'étude était petite (n = 11), aiguë (mesures de labo sur une seule journée) et ne prouve pas de résultats à long terme. Ce qu'elle apporte, c'est la preuve dose-réponse la plus nette disponible — et l'enseignement pratique est que la fréquence compte autant que la durée.",
+
+	"why_section_sitting": "Rester assis a son propre risque",
+	"why_sitting_p1": "Une méta-analyse de Lancet de 2016 a réuni les données de plus de 1 million de personnes dans 16 études. Rester assis plus de 8 heures par jour était associé à une augmentation de 9–59 % de la mortalité toutes causes confondues — et l'ampleur du risque dépendait fortement de l'activité physique de la personne.",
+	"why_sitting_p2": "La nuance honnête : les personnes du quartile d'activité le plus élevé (environ 60–75 minutes d'exercice modéré par jour) compensaient en grande partie le risque de mortalité lié à la position assise. C'est beaucoup d'exercice. Pour la plupart des gens qui atteignent la recommandation standard d'environ 150 min/semaine, rester assis longtemps ajoute toujours un risque mesurable.",
+	"why_sitting_p3": "Donc tu n'as pas à choisir entre la salle de sport et les pauses-marche. Tu as besoin des deux. Ce qui change, c'est que les pauses-marche ne sont pas un bonus — elles ciblent quelque chose qu'une routine d'exercice normale ne corrige pas entièrement.",
+
+	"why_section_who": "Ce que dit la WHO",
+	"why_who_quote": "Les adultes devraient limiter le temps passé en sédentarité. Remplacer le temps sédentaire par une activité physique de n'importe quelle intensité (y compris légère) apporte des bénéfices pour la santé.",
+	"why_who_caveat": "Point d'honnêteté important : la WHO n'a pas fixé de seuil de temps précis (par exemple, \"pause toutes les 30 minutes\"). Les preuves n'étaient pas assez solides. Si quelqu'un te dit que la WHO recommande un intervalle de pause précis, il l'a inventé.",
+
+	"why_section_app": "Ce que fait cette app",
+	"why_app_bullet1": "Te rappelle de faire une pause toutes les 30, 45 ou 60 minutes — à toi de choisir.",
+	"why_app_bullet2": "Pauses de 5 minutes par défaut, comme la dose efficace de l'étude Diaz.",
+	"why_app_bullet3": "Ne compte pas les séries, ne te note pas, ne te culpabilise pas.",
+	"why_app_bullet4": "Ne remplace pas ton véritable entraînement.",
+	"why_app_outro": "Lance le minuteur, marche quand il sonne, reviens, relance-le. C'est tout.",
+
+	"why_references": "Références",
+	"why_translation_notice": "Page traduite automatiquement. La version anglaise fait foi : ",
+	"why_translation_notice_link": "lire en anglais"
+}

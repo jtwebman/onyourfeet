@@ -1,0 +1,61 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"app_name": "On Your Feet",
+	"meta_description": "Eine total simple Aufsteh-Erinnerung. Timer starten, Pause machen, wiederholen.",
+
+	"timer_work_for": "Arbeiten für",
+	"timer_unit_minutes_short": "Min.",
+	"timer_unit_seconds_short": "Sek.",
+	"timer_start": "Start",
+	"timer_cancel": "Abbrechen",
+	"timer_next_break_in": "Nächste Pause in",
+	"timer_time_to_stand": "Zeit aufzustehen",
+	"timer_take_walk": "Geh 5 Minuten spazieren.",
+	"timer_im_standing": "Ich stehe",
+	"timer_snooze": "5 Min. später",
+	"timer_walk_it_out": "Lauf dich aus — zurück in",
+	"timer_end_early": "Früher beenden",
+	"timer_nice_work": "Gut gemacht",
+	"timer_hit_start_again": "Drück Start, sobald du wieder sitzt.",
+	"timer_done": "Fertig",
+	"timer_why_link": "Warum es das gibt →",
+
+	"title_alert_stand": "Zeit aufzustehen",
+	"title_done": "Gut gemacht",
+
+	"notify_time_to_stand": "Zeit aufzustehen.",
+	"notify_snooze_finished": "Snooze vorbei. Aufstehen.",
+	"notify_break_complete": "Pause beendet.",
+
+	"why_title": "Warum es das gibt",
+	"why_meta_description": "Die Forschung dahinter, warum kurze, häufige Geh-Pausen zählen — mit echten Quellen, ohne Übertreibung.",
+	"why_back_to_timer": "← Zurück zum Timer",
+	"why_intro": "Die meisten Timer-Apps für Schreibtischarbeiter sind überdimensionierte Planungstools. Diese hier ist es bewusst nicht. Es gibt einen echten Grund, warum kurze Geh-Pausen zählen — hier steht, was die Forschung tatsächlich sagt, mit Quellen und ohne Übertreibung.",
+
+	"why_section_headline": "Das zentrale Ergebnis",
+	"why_headline_p1": "In einer randomisierten Cross-over-Studie von 2023 an Columbia testeten Forscher fünf verschiedene Sitzpausen-Muster über 8-stündige Laborsitzungen. Nur ein Muster senkte den postprandialen Blutzucker deutlich: 5 Minuten leichtes Gehen alle 30 Minuten.",
+	"why_headline_bullet1": "Kleinere Dosen (1 Min./30 Min., 1 Min./60 Min., 5 Min./60 Min.) senkten den Blutdruck, aber nicht den Blutzucker.",
+	"why_headline_bullet2": "Die Dosis 5 Min. alle 30 Min. bewegte beides.",
+	"why_headline_bullet3": "Die iAUC des postprandialen Blutzuckers sank um rund 12 Einheiten (p = 0.017); der systolische Blutdruck sank in allen Pausen-Bedingungen um 4–5 mmHg.",
+	"why_headline_caveat": "Wichtige Einschränkungen: Die Studie war klein (n = 11), akut (Labormessungen an einem einzigen Tag) und belegt keine Langzeitergebnisse. Was sie aber liefert, ist die sauberste verfügbare Dosis-Wirkungs-Evidenz — und die praktische Erkenntnis: Häufigkeit zählt genauso wie Dauer.",
+
+	"why_section_sitting": "Sitzen hat sein eigenes Risiko",
+	"why_sitting_p1": "Eine Lancet-Meta-Analyse von 2016 fasste Daten von über 1 million Menschen aus 16 Studien zusammen. Mehr als 8 Stunden Sitzen am Tag waren mit einem Anstieg der Gesamtmortalität um 9–59 % verbunden — und die Höhe des Risikos hing stark davon ab, wie viel sich jemand bewegte.",
+	"why_sitting_p2": "Die ehrliche Nuance: Personen im höchsten Aktivitätsquartil (rund 60–75 Minuten moderate Bewegung pro Tag) glichen das Mortalitätsrisiko durch Sitzen weitgehend aus. Das ist eine Menge Bewegung. Für die meisten, die die übliche Empfehlung von rund 150 Min./Woche erreichen, bringt langes Sitzen weiterhin ein messbares Risiko.",
+	"why_sitting_p3": "Du musst dich also nicht zwischen Fitnessstudio und Geh-Pausen entscheiden. Du brauchst beides. Geh-Pausen sind kein Bonus — sie adressieren etwas, das eine normale Trainingsroutine nicht vollständig löst.",
+
+	"why_section_who": "Was die WHO sagt",
+	"why_who_quote": "Erwachsene sollten die Zeit, die sie sitzend verbringen, begrenzen. Sitzzeit durch körperliche Aktivität jeglicher Intensität (auch leichter) zu ersetzen, bringt gesundheitliche Vorteile.",
+	"why_who_caveat": "Wichtiger Punkt zur Ehrlichkeit: Die WHO hat keinen konkreten zeitlichen Grenzwert festgelegt (z. B. \"Pause alle 30 Minuten\"). Die Evidenz war dafür nicht stark genug. Wenn dir jemand sagt, die WHO empfehle ein konkretes Pausenintervall, hat er sich das ausgedacht.",
+
+	"why_section_app": "Was diese App macht",
+	"why_app_bullet1": "Erinnert dich an Pausen alle 30, 45 oder 60 Minuten — deine Wahl.",
+	"why_app_bullet2": "Standardmäßig 5-Minuten-Pausen, passend zur wirksamen Dosis der Diaz-Studie.",
+	"why_app_bullet3": "Zählt keine Streaks, gibt dir keine Punkte und macht dir kein schlechtes Gewissen.",
+	"why_app_bullet4": "Ersetzt nicht dein eigentliches Training.",
+	"why_app_outro": "Timer starten, beim Signal spazieren gehen, zurückkommen, wieder starten. Mehr nicht.",
+
+	"why_references": "Quellen",
+	"why_translation_notice": "Maschinell übersetzte Seite. Die englische Version ist verbindlich: ",
+	"why_translation_notice_link": "auf Englisch lesen"
+}
