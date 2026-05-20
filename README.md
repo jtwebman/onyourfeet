@@ -4,11 +4,11 @@ A dead-simple stand-up reminder for desk workers.
 
 Start a timer. When it ends, you hear a couple of soft beeps and an OS notification. You either snooze for 5 more minutes or hit **I'm standing up** — which starts a 5-minute standing timer. When that's done you hit start again. No streaks, no charts, no schedule editor, no login.
 
-**Live:** <https://onyourfeet.jtwebman.workers.dev>
+**Live:** <https://onyourfeet.app>
 
 ## Why this exists
 
-There's real research behind it — see [the Why page](https://onyourfeet.jtwebman.workers.dev/en/why) for the actual citations.
+There's real research behind it — see [the Why page](https://onyourfeet.app/en/why) for the actual citations.
 
 Short version: Duran/Diaz et al. (2023, _Medicine & Science in Sports & Exercise_) tested five sitting-break patterns in a randomized crossover trial. Only one — **5 minutes of light walking every 30 minutes** — significantly reduced both post-meal blood sugar and blood pressure. A separate 2016 _Lancet_ meta-analysis (1M+ people) found that prolonged sitting carries health risk that typical exercise levels don't fully offset. This app implements that specific dose with zero ceremony.
 
@@ -60,4 +60,4 @@ Wrangler is pinned to a specific Cloudflare account via `account_id` in `wrangle
 
 [AGPL-3.0-or-later](./LICENSE).
 
-If you modify the code and run it as a network service that other people use, you must publish your modifications under the same license. Personal use of the public site at `onyourfeet.jtwebman.workers.dev` doesn't require anything from you.
+If you modify the code and run it as a network service that other people use, you must publish your modifications under the same license. Personal use of the public site at `onyourfeet.app` doesn't require anything from you.
