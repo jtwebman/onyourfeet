@@ -30,6 +30,39 @@
 	const snoozeSeconds = $derived(isDevMode ? 1 : SNOOZE_MINUTES * 60);
 	const standSeconds = $derived(isDevMode ? 1 : STAND_MINUTES * 60);
 
+	const canonicalUrl = $derived(`https://onyourfeet.app/${getLocale()}/`);
+
+	const jsonLd = $derived(
+		JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'WebApplication',
+			name: 'On Your Feet',
+			alternateName: ['Stand-Up Reminder', 'Desk Break Timer'],
+			url: canonicalUrl,
+			description: m.meta_description(),
+			applicationCategory: 'HealthApplication',
+			applicationSubCategory: 'Wellness',
+			operatingSystem: 'Web Browser',
+			browserRequirements: 'Requires JavaScript',
+			offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+			license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+			inLanguage: ['en', 'es', 'pt', 'fr', 'de', 'it', 'nl', 'pl', 'ru', 'ja', 'ko', 'zh', 'hi'],
+			keywords: [
+				'desk break timer',
+				'stand-up reminder',
+				'work break timer',
+				'walking break',
+				'standing break',
+				'sedentary health',
+				'sitting timer',
+				'office worker wellness',
+				'pomodoro alternative',
+				'movement break',
+				'health timer'
+			].join(', ')
+		})
+	);
+
 	const title = $derived(
 		phase === 'working' || phase === 'standing'
 			? `${formatDuration(secondsLeft)} — ${m.app_name()}`
@@ -196,12 +229,15 @@
 	<meta property="og:title" content={m.app_name()} />
 	<meta property="og:description" content={m.meta_description()} />
 	<meta property="og:image" content="https://onyourfeet.app/og-image.png" />
-	<meta property="og:url" content="https://onyourfeet.app/" />
+	<meta property="og:url" content={canonicalUrl} />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={m.app_name()} />
 	<meta name="twitter:description" content={m.meta_description()} />
 	<meta name="twitter:image" content="https://onyourfeet.app/og-image.png" />
+
+	<link rel="canonical" href={canonicalUrl} />
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <main class="flex min-h-screen flex-col items-center justify-center bg-zinc-50 p-6 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">

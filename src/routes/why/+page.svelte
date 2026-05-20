@@ -4,11 +4,74 @@
 
 	const locale = $derived(getLocale());
 	const isTranslated = $derived(locale !== baseLocale);
+	const canonicalUrl = $derived(`https://onyourfeet.app/${locale}/why`);
+
+	const jsonLd = $derived(
+		JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Article',
+			headline: m.why_title(),
+			description: m.why_meta_description(),
+			datePublished: '2026-05-19',
+			dateModified: '2026-05-20',
+			inLanguage: locale,
+			author: { '@type': 'Person', name: 'jtwebman' },
+			publisher: {
+				'@type': 'Organization',
+				name: 'On Your Feet',
+				url: 'https://onyourfeet.app/'
+			},
+			mainEntityOfPage: canonicalUrl,
+			image: 'https://onyourfeet.app/og-image.png',
+			keywords:
+				'stand-up breaks, walking breaks, desk worker health, sedentary risk, prolonged sitting, movement breaks, work break research',
+			citation: [
+				{
+					'@type': 'ScholarlyArticle',
+					name: 'Breaking Up Prolonged Sitting to Improve Cardiometabolic Risk: Dose-Response Analysis of a Randomized Crossover Trial',
+					author: 'Duran AT, Friel CP, Serafini MA, Ensari I, Cheung YK, Diaz KM',
+					datePublished: '2023',
+					isPartOf: { '@type': 'Periodical', name: 'Medicine & Science in Sports & Exercise' },
+					url: 'https://pubmed.ncbi.nlm.nih.gov/36728338/'
+				},
+				{
+					'@type': 'ScholarlyArticle',
+					name: 'Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? A harmonised meta-analysis of data from more than 1 million men and women',
+					author: 'Ekelund U, Steene-Johannessen J, Brown WJ, et al.',
+					datePublished: '2016',
+					isPartOf: { '@type': 'Periodical', name: 'The Lancet' },
+					url: 'https://pubmed.ncbi.nlm.nih.gov/27475271/'
+				},
+				{
+					'@type': 'ScholarlyArticle',
+					name: 'World Health Organization 2020 guidelines on physical activity and sedentary behaviour',
+					author: 'Bull FC, Al-Ansari SS, Biddle S, et al.',
+					datePublished: '2020',
+					isPartOf: { '@type': 'Periodical', name: 'British Journal of Sports Medicine' },
+					url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7719906/'
+				}
+			]
+		})
+	);
 </script>
 
 <svelte:head>
 	<title>{m.why_title()} — {m.app_name()}</title>
 	<meta name="description" content={m.why_meta_description()} />
+
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={`${m.why_title()} — ${m.app_name()}`} />
+	<meta property="og:description" content={m.why_meta_description()} />
+	<meta property="og:image" content="https://onyourfeet.app/og-image.png" />
+	<meta property="og:url" content={canonicalUrl} />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={`${m.why_title()} — ${m.app_name()}`} />
+	<meta name="twitter:description" content={m.why_meta_description()} />
+	<meta name="twitter:image" content="https://onyourfeet.app/og-image.png" />
+
+	<link rel="canonical" href={canonicalUrl} />
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <div class="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">

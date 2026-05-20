@@ -1,7 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"app_name": "On Your Feet",
-	"meta_description": "A dead-simple stand-up reminder. Start a timer, take a break, repeat.",
+	"meta_description": "A no-frills stand-up reminder and desk break timer for office workers. Start a 30, 45, or 60 minute work timer and get nudged to take a 5-minute walking break. Backed by sedentary-health research. No login, no tracking.",
 
 	"timer_work_for": "Work for",
 	"timer_unit_minutes_short": "min",
@@ -28,7 +28,7 @@
 	"notify_break_complete": "Break complete.",
 
 	"why_title": "Why this exists",
-	"why_meta_description": "The research behind why short, frequent walking breaks matter — with real citations, no overclaiming.",
+	"why_meta_description": "Why short standing and walking breaks every 30 minutes matter for desk workers. Peer-reviewed research on sedentary health risks, with citations from Columbia 2023, Lancet 2016, and WHO 2020.",
 	"why_back_to_timer": "← Back to timer",
 	"why_intro": "Most timer apps for desk workers are over-engineered scheduling tools. This one is deliberately not. There's a real reason short walking breaks matter — here's what the research actually says, with citations, no overclaiming.",
 
