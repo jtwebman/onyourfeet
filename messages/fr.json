@@ -18,6 +18,7 @@
 	"timer_nice_work": "Bien joué",
 	"timer_hit_start_again": "Appuie sur démarrer quand tu te rassois.",
 	"timer_done": "Terminé",
+	"timer_start_another": "Relancer un minuteur de {minutes} {unit}",
 	"timer_why_link": "Pourquoi ça existe →",
 
 	"title_alert_stand": "C'est l'heure de se lever",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "C'est l'heure de se lever.",
 	"notify_snooze_finished": "Report terminé. Debout.",
 	"notify_break_complete": "Pause terminée.",
+
+	"notification_denied_banner": "Les notifications sont bloquées pour ce site. Active-les dans les réglages du navigateur pour que l'alarme te parvienne quand cet onglet n'est pas au premier plan.",
+	"notification_enable_link": "Activer les notifications du navigateur",
+
+	"alert_repeated_count": "Toujours en attente — alerte {count}/10",
+
+	"sound_label": "Son d'alerte",
+	"sound_settings_label": "Réglages du son",
+	"sound_settings_hint": "Le fichier personnalisé (s'il est envoyé) est partagé entre les deux alarmes.",
+	"sound_standup_label": "Alarme pour se lever",
+	"sound_done_label": "Alarme de fin de pause",
+	"sound_beeps": "Trois bips doux",
+	"sound_bell": "Cloche douce",
+	"sound_chimes": "Carillon clair",
+	"sound_knock": "Toc-toc",
+	"sound_silent": "Silencieux (notification seule)",
+	"sound_custom_choose": "Fichier perso…",
+	"sound_custom_saved": "Fichier perso",
+	"sound_too_large": "Fichier trop volumineux (500 Ko max).",
+	"sound_storage_error": "Enregistrement impossible — le stockage du navigateur est peut-être plein.",
 
 	"why_title": "Pourquoi ça existe",
 	"why_meta_description": "La recherche derrière l'importance des pauses-marche courtes et fréquentes — avec de vraies citations, sans exagération.",

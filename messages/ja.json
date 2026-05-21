@@ -18,6 +18,7 @@
 	"timer_nice_work": "お疲れさま",
 	"timer_hit_start_again": "また座ったらスタートを押してください。",
 	"timer_done": "完了",
+	"timer_start_another": "もう一度 {minutes} {unit} のタイマー",
 	"timer_why_link": "このアプリの目的 →",
 
 	"title_alert_stand": "立ち上がる時間",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "立ち上がる時間です。",
 	"notify_snooze_finished": "スヌーズ終了。立ち上がってください。",
 	"notify_break_complete": "休憩完了。",
+
+	"notification_denied_banner": "このサイトの通知はブロックされています。このタブが前面でないときもアラームが届くよう、ブラウザの設定でオンにしてください。",
+	"notification_enable_link": "ブラウザ通知をオンにする",
+
+	"alert_repeated_count": "まだ待っています — アラート {count}/10",
+
+	"sound_label": "アラーム音",
+	"sound_settings_label": "サウンド設定",
+	"sound_settings_hint": "カスタムファイル(アップロードした場合)は両方のアラームで共有されます。",
+	"sound_standup_label": "立ち上がりアラーム",
+	"sound_done_label": "休憩終了アラーム",
+	"sound_beeps": "やさしいビープ3回",
+	"sound_bell": "やさしいベル",
+	"sound_chimes": "明るいチャイム",
+	"sound_knock": "ノックノック",
+	"sound_silent": "無音(通知のみ)",
+	"sound_custom_choose": "カスタムファイル…",
+	"sound_custom_saved": "カスタムファイル",
+	"sound_too_large": "ファイルが大きすぎます(最大500 KB)。",
+	"sound_storage_error": "保存できませんでした — ブラウザのストレージがいっぱいかもしれません。",
 
 	"why_title": "このアプリの目的",
 	"why_meta_description": "短く頻繁な歩行休憩がなぜ大事なのか、研究を引用しながら誇張なしで説明します。",

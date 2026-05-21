@@ -18,6 +18,7 @@
 	"timer_nice_work": "Mandou bem",
 	"timer_hit_start_again": "Toque em iniciar quando voltar a sentar.",
 	"timer_done": "Pronto",
+	"timer_start_another": "Iniciar outro timer de {minutes} {unit}",
 	"timer_why_link": "Por que isso existe →",
 
 	"title_alert_stand": "Hora de levantar",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "Hora de levantar.",
 	"notify_snooze_finished": "A soneca acabou. Levante-se.",
 	"notify_break_complete": "Pausa concluída.",
+
+	"notification_denied_banner": "As notificações estão bloqueadas para este site. Ative nas configurações do navegador para que o alarme chegue quando esta aba não estiver em foco.",
+	"notification_enable_link": "Ativar notificações do navegador",
+
+	"alert_repeated_count": "Ainda esperando — alerta {count}/10",
+
+	"sound_label": "Som do alerta",
+	"sound_settings_label": "Ajustes de som",
+	"sound_settings_hint": "O arquivo personalizado (se enviado) é usado pelos dois alarmes.",
+	"sound_standup_label": "Alarme para levantar",
+	"sound_done_label": "Alarme de fim de pausa",
+	"sound_beeps": "Três bipes suaves",
+	"sound_bell": "Sininho suave",
+	"sound_chimes": "Carrilhão brilhante",
+	"sound_knock": "Toc-toc",
+	"sound_silent": "Silencioso (só notificação)",
+	"sound_custom_choose": "Arquivo personalizado…",
+	"sound_custom_saved": "Arquivo personalizado",
+	"sound_too_large": "Arquivo grande demais (máx. 500 KB).",
+	"sound_storage_error": "Não foi possível salvar — o armazenamento do navegador pode estar cheio.",
 
 	"why_title": "Por que isso existe",
 	"why_meta_description": "A pesquisa por trás do motivo pelo qual pausas curtas e frequentes para caminhar importam — com citações reais, sem exagero.",

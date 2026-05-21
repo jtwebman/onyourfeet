@@ -18,6 +18,7 @@
 	"timer_nice_work": "Goed gedaan",
 	"timer_hit_start_again": "Druk op start zodra je weer zit.",
 	"timer_done": "Klaar",
+	"timer_start_another": "Nog een timer van {minutes} {unit} starten",
 	"timer_why_link": "Waarom dit bestaat →",
 
 	"title_alert_stand": "Tijd om op te staan",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "Tijd om op te staan.",
 	"notify_snooze_finished": "Snooze voorbij. Sta op.",
 	"notify_break_complete": "Pauze voltooid.",
+
+	"notification_denied_banner": "Meldingen zijn geblokkeerd voor deze site. Zet ze aan in de browser-instellingen, zodat het alarm je bereikt als dit tabblad niet actief is.",
+	"notification_enable_link": "Browsermeldingen aanzetten",
+
+	"alert_repeated_count": "Nog steeds aan het wachten — melding {count}/10",
+
+	"sound_label": "Alarmgeluid",
+	"sound_settings_label": "Geluidsinstellingen",
+	"sound_settings_hint": "Het eigen bestand (indien geüpload) wordt door beide alarmen gebruikt.",
+	"sound_standup_label": "Opsta-alarm",
+	"sound_done_label": "Einde-pauze-alarm",
+	"sound_beeps": "Drie zachte piepjes",
+	"sound_bell": "Zachte bel",
+	"sound_chimes": "Heldere klokjes",
+	"sound_knock": "Klop-klop",
+	"sound_silent": "Stil (alleen melding)",
+	"sound_custom_choose": "Eigen bestand…",
+	"sound_custom_saved": "Eigen bestand",
+	"sound_too_large": "Bestand te groot (max. 500 KB).",
+	"sound_storage_error": "Opslaan mislukt — de browseropslag is mogelijk vol.",
 
 	"why_title": "Waarom dit bestaat",
 	"why_meta_description": "Het onderzoek achter waarom korte, frequente loopdokpauzes ertoe doen — met echte bronnen, zonder overdrijving.",

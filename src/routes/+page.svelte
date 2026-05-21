@@ -5,6 +5,9 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import {
 		CUSTOM_SOUND_STORAGE_KEY,
+		DEFAULT_DONE_SOUND,
+		DEFAULT_STANDUP_SOUND,
+		DONE_SOUND_STORAGE_KEY,
 		SOUND_STORAGE_KEY,
 		isSoundKind,
 		playSound,
@@ -142,9 +145,11 @@
 		if (!isDevMode) localStorage.setItem(STORAGE_KEY, String(d));
 	}
 
-	function playCurrentSound() {
-		const saved = localStorage.getItem(SOUND_STORAGE_KEY);
-		const kind: SoundKind = saved && isSoundKind(saved) ? saved : 'beeps';
+	function playAlertSound(alarm: 'standUp' | 'done') {
+		const key = alarm === 'standUp' ? SOUND_STORAGE_KEY : DONE_SOUND_STORAGE_KEY;
+		const fallback: SoundKind = alarm === 'standUp' ? DEFAULT_STANDUP_SOUND : DEFAULT_DONE_SOUND;
+		const saved = localStorage.getItem(key);
+		const kind: SoundKind = saved && isSoundKind(saved) ? saved : fallback;
 		const customSound = localStorage.getItem(CUSTOM_SOUND_STORAGE_KEY);
 		playSound(kind, customSound);
 	}
@@ -204,7 +209,7 @@
 	function startAlertLoop(message: string) {
 		stopAlertLoop();
 		alertCount = 1;
-		playCurrentSound();
+		playAlertSound('standUp');
 		notify(message);
 		alertRepeatId = window.setInterval(() => {
 			if (alertCount >= ALERT_MAX_REPEATS) {
@@ -212,7 +217,7 @@
 				return;
 			}
 			alertCount++;
-			playCurrentSound();
+			playAlertSound('standUp');
 			notify(message);
 		}, alertIntervalMs);
 	}
@@ -249,7 +254,7 @@
 		phase = 'standing';
 		runCountdown(standSeconds, () => {
 			phase = 'alert_stand';
-			playCurrentSound();
+			playAlertSound('done');
 			notify(m.notify_break_complete());
 		});
 	}
@@ -417,13 +422,23 @@
 					{m.timer_nice_work()}
 				</div>
 				<p class="text-zinc-500 dark:text-zinc-400">{m.timer_hit_start_again()}</p>
-				<button
-					type="button"
-					onclick={reset}
-					class="w-full rounded-2xl bg-emerald-500 py-5 font-semibold text-white transition hover:bg-emerald-400 dark:text-zinc-950"
-				>
-					{m.timer_done()}
-				</button>
+				<div class="flex flex-col gap-3 pt-2">
+					<button
+						type="button"
+						onclick={start}
+						data-testid="restart-timer"
+						class="w-full rounded-2xl bg-emerald-500 py-5 font-semibold text-white transition hover:bg-emerald-400 dark:text-zinc-950"
+					>
+						{m.timer_start_another({ minutes: formatInt(workValue), unit: unitLabel })}
+					</button>
+					<button
+						type="button"
+						onclick={reset}
+						class="w-full rounded-2xl border border-zinc-300 py-4 text-zinc-700 transition hover:border-zinc-500 dark:border-zinc-700 dark:text-zinc-300"
+					>
+						{m.timer_done()}
+					</button>
+				</div>
 			</div>
 		{/if}
 	</div>

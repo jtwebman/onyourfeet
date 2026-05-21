@@ -18,6 +18,7 @@
 	"timer_nice_work": "Dobra robota",
 	"timer_hit_start_again": "Naciśnij start, gdy znowu usiądziesz.",
 	"timer_done": "Gotowe",
+	"timer_start_another": "Włącz kolejny minutnik na {minutes} {unit}",
 	"timer_why_link": "Po co to istnieje →",
 
 	"title_alert_stand": "Czas wstać",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "Czas wstać.",
 	"notify_snooze_finished": "Drzemka skończona. Wstań.",
 	"notify_break_complete": "Przerwa zakończona.",
+
+	"notification_denied_banner": "Powiadomienia są zablokowane dla tej strony. Włącz je w ustawieniach przeglądarki, by alarm docierał, gdy ta karta nie jest aktywna.",
+	"notification_enable_link": "Włącz powiadomienia przeglądarki",
+
+	"alert_repeated_count": "Wciąż czekam — alarm {count}/10",
+
+	"sound_label": "Dźwięk alarmu",
+	"sound_settings_label": "Ustawienia dźwięku",
+	"sound_settings_hint": "Własny plik (jeśli wgrany) jest używany przez oba alarmy.",
+	"sound_standup_label": "Alarm wstawania",
+	"sound_done_label": "Alarm końca przerwy",
+	"sound_beeps": "Trzy ciche piknięcia",
+	"sound_bell": "Łagodny dzwonek",
+	"sound_chimes": "Jasne dzwoneczki",
+	"sound_knock": "Puk-puk",
+	"sound_silent": "Cisza (tylko powiadomienie)",
+	"sound_custom_choose": "Własny plik…",
+	"sound_custom_saved": "Własny plik",
+	"sound_too_large": "Plik za duży (maks. 500 KB).",
+	"sound_storage_error": "Nie udało się zapisać — pamięć przeglądarki może być pełna.",
 
 	"why_title": "Po co to istnieje",
 	"why_meta_description": "Badania stojące za tym, dlaczego krótkie, częste przerwy na chodzenie mają znaczenie — z prawdziwymi cytowaniami, bez przesady.",

@@ -4,7 +4,7 @@
 	import { page } from '$app/state';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import LanguageSwitcher from '$lib/LanguageSwitcher.svelte';
-	import SoundSwitcher from '$lib/SoundSwitcher.svelte';
+	import SoundSettings from '$lib/SoundSettings.svelte';
 	import ThemeToggle from '$lib/ThemeToggle.svelte';
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
@@ -21,7 +21,7 @@
 
 <div class="fixed top-3 right-3 z-50 flex items-center gap-1">
 	<ThemeToggle />
-	<SoundSwitcher />
+	<SoundSettings />
 	<LanguageSwitcher />
 </div>
 

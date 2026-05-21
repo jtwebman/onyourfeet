@@ -220,29 +220,86 @@ test.describe('persistent alarm', () => {
 	});
 });
 
-test.describe('sound switcher', () => {
-	test('exposes all six sound options', async ({ page }) => {
+test.describe('sound settings', () => {
+	test('panel opens with two independent dropdowns', async ({ page }) => {
 		await gotoApp(page);
-		const options = await page.getByTestId('sound-switcher').locator('option').all();
-		expect(options.length).toBe(6);
+		await expect(page.getByTestId('sound-settings-panel')).toHaveCount(0);
+		await page.getByTestId('sound-settings-button').click();
+		await expect(page.getByTestId('sound-settings-panel')).toBeVisible();
+		await expect(page.getByTestId('standup-sound-select')).toBeVisible();
+		await expect(page.getByTestId('done-sound-select')).toBeVisible();
+
+		const standupOptions = await page.getByTestId('standup-sound-select').locator('option').all();
+		const doneOptions = await page.getByTestId('done-sound-select').locator('option').all();
+		expect(standupOptions.length).toBe(6);
+		expect(doneOptions.length).toBe(6);
 	});
 
-	test('selecting a preset persists to localStorage and survives reload', async ({ page }) => {
+	test('default values: stand-up = beeps, done = chimes', async ({ page }) => {
 		await gotoApp(page);
-		await page.getByTestId('sound-switcher').selectOption('bell');
-		const stored = await page.evaluate(() => localStorage.getItem('onyourfeet:sound'));
-		expect(stored).toBe('bell');
+		await page.getByTestId('sound-settings-button').click();
+		await expect(page.getByTestId('standup-sound-select')).toHaveValue('beeps');
+		await expect(page.getByTestId('done-sound-select')).toHaveValue('chimes');
+	});
+
+	test('stand-up and done alarms persist independently', async ({ page }) => {
+		await gotoApp(page);
+		await page.getByTestId('sound-settings-button').click();
+		await page.getByTestId('standup-sound-select').selectOption('knock');
+		await page.getByTestId('done-sound-select').selectOption('bell');
+
+		expect(await page.evaluate(() => localStorage.getItem('onyourfeet:sound'))).toBe('knock');
+		expect(await page.evaluate(() => localStorage.getItem('onyourfeet:doneSound'))).toBe('bell');
 
 		await page.reload();
 		await page.locator('html[data-hydrated="true"]').waitFor();
-		await expect(page.getByTestId('sound-switcher')).toHaveValue('bell');
+		await page.getByTestId('sound-settings-button').click();
+		await expect(page.getByTestId('standup-sound-select')).toHaveValue('knock');
+		await expect(page.getByTestId('done-sound-select')).toHaveValue('bell');
+	});
+
+	test('panel closes on Escape', async ({ page }) => {
+		await gotoApp(page);
+		await page.getByTestId('sound-settings-button').click();
+		await expect(page.getByTestId('sound-settings-panel')).toBeVisible();
+		await page.keyboard.press('Escape');
+		await expect(page.getByTestId('sound-settings-panel')).toHaveCount(0);
 	});
 
 	test('picking a preset does not touch custom-sound storage', async ({ page }) => {
 		await gotoApp(page);
-		await page.getByTestId('sound-switcher').selectOption('silent');
+		await page.getByTestId('sound-settings-button').click();
+		await page.getByTestId('standup-sound-select').selectOption('silent');
 		const custom = await page.evaluate(() => localStorage.getItem('onyourfeet:customSound'));
 		expect(custom).toBeNull();
+	});
+});
+
+test.describe('restart from done state', () => {
+	test('"Start another" button immediately restarts the work timer', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '1 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+
+		await expect(page.getByTestId('alert-heading')).toBeVisible({ timeout: 5000 });
+		await page.getByRole('button', { name: "I'm standing up" }).click();
+		await expect(page.getByText('Walk it out')).toBeVisible();
+		await expect(page.getByText('Nice work')).toBeVisible({ timeout: 5000 });
+
+		await page.getByTestId('restart-timer').click();
+		await expect(page.getByText('Next break in')).toBeVisible();
+	});
+
+	test('"Done" button still returns to idle', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '1 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+		await expect(page.getByTestId('alert-heading')).toBeVisible({ timeout: 5000 });
+		await page.getByRole('button', { name: "I'm standing up" }).click();
+		await expect(page.getByText('Nice work')).toBeVisible({ timeout: 5000 });
+
+		await page.getByRole('button', { name: 'Done', exact: true }).click();
+		await expect(page.getByRole('button', { name: 'Start', exact: true })).toBeVisible();
 	});
 });
 
