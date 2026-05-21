@@ -27,6 +27,22 @@
 	"notify_snooze_finished": "Snooze finished. Stand up.",
 	"notify_break_complete": "Break complete.",
 
+	"notification_denied_banner": "Notifications are blocked for this site. Enable them in your browser settings so the alarm reaches you when this tab isn't focused.",
+	"notification_enable_link": "Enable browser notifications",
+
+	"alert_repeated_count": "Still waiting — alert {count}/10",
+
+	"sound_label": "Alert sound",
+	"sound_beeps": "Three soft beeps",
+	"sound_bell": "Gentle bell",
+	"sound_chimes": "Bright chimes",
+	"sound_knock": "Knock-knock",
+	"sound_silent": "Silent (notification only)",
+	"sound_custom_choose": "Custom file…",
+	"sound_custom_saved": "Custom file",
+	"sound_too_large": "File too large (500 KB max).",
+	"sound_storage_error": "Could not save — browser storage might be full.",
+
 	"why_title": "Why this exists",
 	"why_meta_description": "Why short standing and walking breaks every 30 minutes matter for desk workers. Peer-reviewed research on sedentary health risks, with citations from Columbia 2023, Lancet 2016, and WHO 2020.",
 	"why_back_to_timer": "← Back to timer",

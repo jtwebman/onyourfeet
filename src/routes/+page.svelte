@@ -3,6 +3,13 @@
 	import { dev } from '$app/environment';
 	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 	import * as m from '$lib/paraglide/messages.js';
+	import {
+		CUSTOM_SOUND_STORAGE_KEY,
+		SOUND_STORAGE_KEY,
+		isSoundKind,
+		playSound,
+		type SoundKind
+	} from '$lib/sounds';
 
 	type Phase = 'idle' | 'working' | 'alert_work' | 'standing' | 'alert_stand';
 
@@ -12,14 +19,21 @@
 	const STAND_MINUTES = 5;
 	const STORAGE_KEY = 'onyourfeet:workMinutes';
 
+	const ALERT_MAX_REPEATS = 10; // Stop after this many fires (5 min at 30s intervals).
+	const ALERT_INTERVAL_PROD_MS = 30_000;
+	const ALERT_INTERVAL_DEV_MS = 600;
+
 	let phase = $state<Phase>('idle');
 	let workValue = $state(45);
 	let secondsLeft = $state(0);
 	let isDevMode = $state(false);
+	let notificationPermission = $state<NotificationPermission>('default');
+	let alertCount = $state(0);
 
 	let intervalId: number | null = null;
 	let timeoutId: number | null = null;
-	let audioCtx: AudioContext | null = null;
+	let alertRepeatId: number | null = null;
+	let lastNotification: Notification | null = null;
 
 	const presets = $derived(isDevMode ? PRESETS_DEV : PRESETS_PROD);
 	const unitLabel = $derived(
@@ -29,6 +43,7 @@
 	const workSeconds = $derived(workValue * secondsMultiplier);
 	const snoozeSeconds = $derived(isDevMode ? 1 : SNOOZE_MINUTES * 60);
 	const standSeconds = $derived(isDevMode ? 1 : STAND_MINUTES * 60);
+	const alertIntervalMs = $derived(isDevMode ? ALERT_INTERVAL_DEV_MS : ALERT_INTERVAL_PROD_MS);
 
 	const canonicalUrl = $derived(`https://onyourfeet.app/${getLocale()}/`);
 
@@ -75,10 +90,9 @@
 
 	onMount(() => {
 		const params = new URLSearchParams(window.location.search);
-		const wantDev = dev && params.has('dev');
-		isDevMode = wantDev;
+		isDevMode = dev && params.has('dev');
 
-		if (wantDev) {
+		if (isDevMode) {
 			workValue = PRESETS_DEV[0];
 		} else {
 			const saved = localStorage.getItem(STORAGE_KEY);
@@ -87,15 +101,24 @@
 				if (!Number.isNaN(n) && n > 0) workValue = n;
 			}
 		}
+
+		if (typeof Notification !== 'undefined') {
+			notificationPermission = Notification.permission;
+		}
 	});
 
-	onDestroy(clearTimers);
+	onDestroy(clearAll);
 
-	function clearTimers() {
+	function clearAll() {
 		if (intervalId !== null) clearInterval(intervalId);
 		if (timeoutId !== null) clearTimeout(timeoutId);
+		if (alertRepeatId !== null) clearInterval(alertRepeatId);
 		intervalId = null;
 		timeoutId = null;
+		alertRepeatId = null;
+		alertCount = 0;
+		lastNotification?.close();
+		lastNotification = null;
 	}
 
 	function formatInt(n: number): string {
@@ -119,56 +142,45 @@
 		if (!isDevMode) localStorage.setItem(STORAGE_KEY, String(d));
 	}
 
-	function getAudioContext(): AudioContext {
-		if (!audioCtx) {
-			const Ctx =
-				window.AudioContext ??
-				(window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-			audioCtx = new Ctx();
-		}
-		return audioCtx;
-	}
-
-	function beep(freq: number, durationMs: number, delayMs: number) {
-		const ctx = getAudioContext();
-		const osc = ctx.createOscillator();
-		const gain = ctx.createGain();
-		osc.type = 'sine';
-		osc.frequency.value = freq;
-		osc.connect(gain);
-		gain.connect(ctx.destination);
-		const start = ctx.currentTime + delayMs / 1000;
-		const stop = start + durationMs / 1000;
-		gain.gain.setValueAtTime(0, start);
-		gain.gain.linearRampToValueAtTime(0.25, start + 0.015);
-		gain.gain.setValueAtTime(0.25, stop - 0.03);
-		gain.gain.linearRampToValueAtTime(0, stop);
-		osc.start(start);
-		osc.stop(stop);
-	}
-
-	function playAlert(times: number) {
-		for (let i = 0; i < times; i++) {
-			beep(880, 180, i * 280);
-		}
+	function playCurrentSound() {
+		const saved = localStorage.getItem(SOUND_STORAGE_KEY);
+		const kind: SoundKind = saved && isSoundKind(saved) ? saved : 'beeps';
+		const customSound = localStorage.getItem(CUSTOM_SOUND_STORAGE_KEY);
+		playSound(kind, customSound);
 	}
 
 	function notify(message: string) {
 		if (typeof Notification === 'undefined') return;
-		if (Notification.permission === 'granted') {
-			new Notification(m.app_name(), { body: message, silent: true });
-		}
+		if (Notification.permission !== 'granted') return;
+		lastNotification?.close();
+		const n = new Notification(m.app_name(), {
+			body: message,
+			tag: 'onyourfeet-alert',
+			requireInteraction: true,
+			silent: false
+		});
+		n.onclick = () => {
+			window.focus();
+			n.close();
+		};
+		lastNotification = n;
 	}
 
 	async function ensureNotificationPermission() {
 		if (typeof Notification === 'undefined') return;
 		if (Notification.permission === 'default') {
-			await Notification.requestPermission();
+			notificationPermission = await Notification.requestPermission();
 		}
 	}
 
+	async function requestNotificationPermission() {
+		if (typeof Notification === 'undefined') return;
+		const result = await Notification.requestPermission();
+		notificationPermission = result;
+	}
+
 	function runCountdown(seconds: number, onDone: () => void) {
-		clearTimers();
+		stopCountdown();
 		const endAt = Date.now() + seconds * 1000;
 		secondsLeft = seconds;
 		intervalId = window.setInterval(() => {
@@ -176,10 +188,41 @@
 			secondsLeft = remaining;
 		}, 250);
 		timeoutId = window.setTimeout(() => {
-			clearTimers();
+			stopCountdown();
 			secondsLeft = 0;
 			onDone();
 		}, seconds * 1000);
+	}
+
+	function stopCountdown() {
+		if (intervalId !== null) clearInterval(intervalId);
+		if (timeoutId !== null) clearTimeout(timeoutId);
+		intervalId = null;
+		timeoutId = null;
+	}
+
+	function startAlertLoop(message: string) {
+		stopAlertLoop();
+		alertCount = 1;
+		playCurrentSound();
+		notify(message);
+		alertRepeatId = window.setInterval(() => {
+			if (alertCount >= ALERT_MAX_REPEATS) {
+				stopAlertLoop();
+				return;
+			}
+			alertCount++;
+			playCurrentSound();
+			notify(message);
+		}, alertIntervalMs);
+	}
+
+	function stopAlertLoop() {
+		if (alertRepeatId !== null) clearInterval(alertRepeatId);
+		alertRepeatId = null;
+		alertCount = 0;
+		lastNotification?.close();
+		lastNotification = null;
 	}
 
 	async function start() {
@@ -188,31 +231,31 @@
 		phase = 'working';
 		runCountdown(workSeconds, () => {
 			phase = 'alert_work';
-			playAlert(3);
-			notify(m.notify_time_to_stand());
+			startAlertLoop(m.notify_time_to_stand());
 		});
 	}
 
 	function snooze() {
+		stopAlertLoop();
 		phase = 'working';
 		runCountdown(snoozeSeconds, () => {
 			phase = 'alert_work';
-			playAlert(3);
-			notify(m.notify_snooze_finished());
+			startAlertLoop(m.notify_snooze_finished());
 		});
 	}
 
 	function startStanding() {
+		stopAlertLoop();
 		phase = 'standing';
 		runCountdown(standSeconds, () => {
 			phase = 'alert_stand';
-			playAlert(2);
+			playCurrentSound();
 			notify(m.notify_break_complete());
 		});
 	}
 
 	function reset() {
-		clearTimers();
+		clearAll();
 		secondsLeft = 0;
 		phase = 'idle';
 	}
@@ -240,7 +283,9 @@
 	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
-<main class="flex min-h-screen flex-col items-center justify-center bg-zinc-50 p-6 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+<main
+	class="flex min-h-screen flex-col items-center justify-center bg-zinc-50 p-6 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100"
+>
 	{#if isDevMode}
 		<div
 			data-testid="dev-badge"
@@ -258,9 +303,7 @@
 	</a>
 
 	<div class="w-full max-w-md text-center">
-		<h1
-			class="mb-12 text-2xl font-semibold tracking-tight text-zinc-700 dark:text-zinc-300"
-		>
+		<h1 class="mb-12 text-2xl font-semibold tracking-tight text-zinc-700 dark:text-zinc-300">
 			{m.app_name()}
 		</h1>
 
@@ -288,6 +331,23 @@
 				>
 					{m.timer_start()}
 				</button>
+				{#if notificationPermission === 'denied'}
+					<div
+						data-testid="notification-denied-banner"
+						class="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-left text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-900/20 dark:text-amber-200"
+					>
+						{m.notification_denied_banner()}
+					</div>
+				{:else if notificationPermission === 'default'}
+					<button
+						type="button"
+						onclick={requestNotificationPermission}
+						data-testid="enable-notifications"
+						class="text-xs text-zinc-500 underline hover:text-zinc-700 dark:hover:text-zinc-300"
+					>
+						{m.notification_enable_link()}
+					</button>
+				{/if}
 			</div>
 		{:else if phase === 'working'}
 			<div class="space-y-8">
@@ -303,11 +363,22 @@
 			</div>
 		{:else if phase === 'alert_work'}
 			<div class="space-y-6">
-				<div class="text-3xl font-semibold text-emerald-700 dark:text-emerald-400">
+				<div
+					data-testid="alert-heading"
+					class="text-3xl font-semibold text-emerald-700 dark:text-emerald-400"
+				>
 					{m.timer_time_to_stand()}
 				</div>
 				<p class="text-zinc-500 dark:text-zinc-400">{m.timer_take_walk()}</p>
-				<div class="flex flex-col gap-3 pt-4">
+				{#if alertCount > 1}
+					<p
+						data-testid="alert-count"
+						class="text-xs text-zinc-400 tabular-nums dark:text-zinc-500"
+					>
+						{m.alert_repeated_count({ count: alertCount })}
+					</p>
+				{/if}
+				<div class="flex flex-col gap-3 pt-2">
 					<button
 						type="button"
 						onclick={startStanding}
@@ -342,7 +413,9 @@
 			</div>
 		{:else if phase === 'alert_stand'}
 			<div class="space-y-6">
-				<div class="text-3xl font-semibold text-emerald-700 dark:text-emerald-400">{m.timer_nice_work()}</div>
+				<div class="text-3xl font-semibold text-emerald-700 dark:text-emerald-400">
+					{m.timer_nice_work()}
+				</div>
 				<p class="text-zinc-500 dark:text-zinc-400">{m.timer_hit_start_again()}</p>
 				<button
 					type="button"
