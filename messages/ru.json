@@ -18,6 +18,7 @@
 	"timer_nice_work": "Молодец",
 	"timer_hit_start_again": "Нажми старт, когда снова сядешь.",
 	"timer_done": "Готово",
+	"timer_start_another": "Запустить ещё таймер на {minutes} {unit}",
 	"timer_why_link": "Зачем это нужно →",
 
 	"title_alert_stand": "Пора встать",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "Пора встать.",
 	"notify_snooze_finished": "Откладывание закончилось. Встань.",
 	"notify_break_complete": "Перерыв окончен.",
+
+	"notification_denied_banner": "Уведомления для этого сайта заблокированы. Включи их в настройках браузера, чтобы сигнал дошёл, когда эта вкладка неактивна.",
+	"notification_enable_link": "Включить уведомления браузера",
+
+	"alert_repeated_count": "Всё ещё жду — сигнал {count}/10",
+
+	"sound_label": "Звук сигнала",
+	"sound_settings_label": "Настройки звука",
+	"sound_settings_hint": "Свой файл (если загружен) используется для обоих сигналов.",
+	"sound_standup_label": "Сигнал «встать»",
+	"sound_done_label": "Сигнал конца перерыва",
+	"sound_beeps": "Три мягких бипа",
+	"sound_bell": "Мягкий колокольчик",
+	"sound_chimes": "Яркие колокольчики",
+	"sound_knock": "Тук-тук",
+	"sound_silent": "Без звука (только уведомление)",
+	"sound_custom_choose": "Свой файл…",
+	"sound_custom_saved": "Свой файл",
+	"sound_too_large": "Файл слишком большой (макс. 500 КБ).",
+	"sound_storage_error": "Не удалось сохранить — возможно, хранилище браузера переполнено.",
 
 	"why_title": "Зачем это нужно",
 	"why_meta_description": "Что говорит наука о том, почему короткие частые перерывы на ходьбу важны — с реальными ссылками, без преувеличений.",

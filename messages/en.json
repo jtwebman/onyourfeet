@@ -18,6 +18,7 @@
 	"timer_nice_work": "Nice work",
 	"timer_hit_start_again": "Hit start when you sit back down.",
 	"timer_done": "Done",
+	"timer_start_another": "Start another {minutes} {unit} timer",
 	"timer_why_link": "Why this exists →",
 
 	"title_alert_stand": "Time to stand",
@@ -33,6 +34,10 @@
 	"alert_repeated_count": "Still waiting — alert {count}/10",
 
 	"sound_label": "Alert sound",
+	"sound_settings_label": "Sound settings",
+	"sound_settings_hint": "The custom file (if uploaded) is shared between both alarms.",
+	"sound_standup_label": "Stand-up alarm",
+	"sound_done_label": "Break-complete alarm",
 	"sound_beeps": "Three soft beeps",
 	"sound_bell": "Gentle bell",
 	"sound_chimes": "Bright chimes",

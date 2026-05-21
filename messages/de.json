@@ -18,6 +18,7 @@
 	"timer_nice_work": "Gut gemacht",
 	"timer_hit_start_again": "Drück Start, sobald du wieder sitzt.",
 	"timer_done": "Fertig",
+	"timer_start_another": "Neuen {minutes}-{unit}-Timer starten",
 	"timer_why_link": "Warum es das gibt →",
 
 	"title_alert_stand": "Zeit aufzustehen",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "Zeit aufzustehen.",
 	"notify_snooze_finished": "Snooze vorbei. Aufstehen.",
 	"notify_break_complete": "Pause beendet.",
+
+	"notification_denied_banner": "Benachrichtigungen sind für diese Seite blockiert. Aktiviere sie in den Browser-Einstellungen, damit der Alarm dich auch erreicht, wenn dieser Tab nicht im Vordergrund ist.",
+	"notification_enable_link": "Browser-Benachrichtigungen aktivieren",
+
+	"alert_repeated_count": "Warte noch — Alarm {count}/10",
+
+	"sound_label": "Alarmton",
+	"sound_settings_label": "Sound-Einstellungen",
+	"sound_settings_hint": "Die eigene Datei (falls hochgeladen) wird von beiden Alarmen genutzt.",
+	"sound_standup_label": "Aufsteh-Alarm",
+	"sound_done_label": "Pause-Ende-Alarm",
+	"sound_beeps": "Drei sanfte Pieptöne",
+	"sound_bell": "Sanfte Glocke",
+	"sound_chimes": "Helle Klangschalen",
+	"sound_knock": "Klopf-klopf",
+	"sound_silent": "Stumm (nur Benachrichtigung)",
+	"sound_custom_choose": "Eigene Datei…",
+	"sound_custom_saved": "Eigene Datei",
+	"sound_too_large": "Datei zu groß (max. 500 KB).",
+	"sound_storage_error": "Konnte nicht gespeichert werden — Browser-Speicher ist evtl. voll.",
 
 	"why_title": "Warum es das gibt",
 	"why_meta_description": "Die Forschung dahinter, warum kurze, häufige Geh-Pausen zählen — mit echten Quellen, ohne Übertreibung.",

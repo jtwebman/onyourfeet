@@ -18,6 +18,7 @@
 	"timer_nice_work": "수고했어요",
 	"timer_hit_start_again": "다시 앉으면 시작을 눌러 주세요.",
 	"timer_done": "완료",
+	"timer_start_another": "{minutes} {unit} 타이머 다시 시작",
 	"timer_why_link": "이 앱이 존재하는 이유 →",
 
 	"title_alert_stand": "일어설 시간",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "일어설 시간입니다.",
 	"notify_snooze_finished": "다시 알림이 끝났어요. 일어나세요.",
 	"notify_break_complete": "휴식 완료.",
+
+	"notification_denied_banner": "이 사이트의 알림이 차단되어 있어요. 이 탭이 활성 상태가 아닐 때도 알람이 전달되도록 브라우저 설정에서 켜 주세요.",
+	"notification_enable_link": "브라우저 알림 켜기",
+
+	"alert_repeated_count": "아직 기다리는 중 — 알림 {count}/10",
+
+	"sound_label": "알림음",
+	"sound_settings_label": "사운드 설정",
+	"sound_settings_hint": "사용자 지정 파일을 올리면 두 알람이 함께 사용해요.",
+	"sound_standup_label": "일어서기 알람",
+	"sound_done_label": "휴식 종료 알람",
+	"sound_beeps": "부드러운 비프음 3회",
+	"sound_bell": "부드러운 종소리",
+	"sound_chimes": "맑은 차임",
+	"sound_knock": "똑똑",
+	"sound_silent": "무음 (알림만)",
+	"sound_custom_choose": "사용자 파일…",
+	"sound_custom_saved": "사용자 파일",
+	"sound_too_large": "파일이 너무 커요 (최대 500 KB).",
+	"sound_storage_error": "저장하지 못했어요 — 브라우저 저장소가 가득 찼을 수 있어요.",
 
 	"why_title": "이 앱이 존재하는 이유",
 	"why_meta_description": "짧고 잦은 걷기 휴식이 왜 중요한지에 대한 연구 — 실제 인용과 함께, 과장은 빼고.",

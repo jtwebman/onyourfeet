@@ -18,6 +18,7 @@
 	"timer_nice_work": "Bel lavoro",
 	"timer_hit_start_again": "Premi avvia quando torni a sederti.",
 	"timer_done": "Fatto",
+	"timer_start_another": "Avvia un altro timer da {minutes} {unit}",
 	"timer_why_link": "Perché esiste →",
 
 	"title_alert_stand": "Ora di alzarsi",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "Ora di alzarsi.",
 	"notify_snooze_finished": "Snooze finito. In piedi.",
 	"notify_break_complete": "Pausa completata.",
+
+	"notification_denied_banner": "Le notifiche sono bloccate per questo sito. Attivale nelle impostazioni del browser perché l'allarme arrivi quando questa scheda non è in primo piano.",
+	"notification_enable_link": "Attiva le notifiche del browser",
+
+	"alert_repeated_count": "Ancora in attesa — avviso {count}/10",
+
+	"sound_label": "Suono dell'avviso",
+	"sound_settings_label": "Impostazioni audio",
+	"sound_settings_hint": "Il file personalizzato (se caricato) è condiviso tra entrambi gli allarmi.",
+	"sound_standup_label": "Allarme per alzarsi",
+	"sound_done_label": "Allarme fine pausa",
+	"sound_beeps": "Tre bip leggeri",
+	"sound_bell": "Campanello delicato",
+	"sound_chimes": "Carillon brillante",
+	"sound_knock": "Toc-toc",
+	"sound_silent": "Silenzioso (solo notifica)",
+	"sound_custom_choose": "File personalizzato…",
+	"sound_custom_saved": "File personalizzato",
+	"sound_too_large": "File troppo grande (max 500 KB).",
+	"sound_storage_error": "Impossibile salvare — lo spazio del browser potrebbe essere pieno.",
 
 	"why_title": "Perché esiste",
 	"why_meta_description": "La ricerca dietro al perché le pause brevi e frequenti per camminare contano — con citazioni reali, senza esagerare.",

@@ -18,6 +18,7 @@
 	"timer_nice_work": "干得不错",
 	"timer_hit_start_again": "重新坐下时再按开始。",
 	"timer_done": "完成",
+	"timer_start_another": "再开一个 {minutes} {unit} 计时器",
 	"timer_why_link": "为什么有这个 →",
 
 	"title_alert_stand": "该起身了",
@@ -26,6 +27,26 @@
 	"notify_time_to_stand": "该起身了。",
 	"notify_snooze_finished": "推迟时间到。起身吧。",
 	"notify_break_complete": "休息结束。",
+
+	"notification_denied_banner": "本站点的通知被屏蔽了。请在浏览器设置中开启,这样标签页不在前台时闹钟也能提醒到你。",
+	"notification_enable_link": "开启浏览器通知",
+
+	"alert_repeated_count": "还在等你 — 第 {count}/10 次提醒",
+
+	"sound_label": "提醒声音",
+	"sound_settings_label": "声音设置",
+	"sound_settings_hint": "上传的自定义文件在两个闹钟之间共享。",
+	"sound_standup_label": "起身闹钟",
+	"sound_done_label": "休息结束闹钟",
+	"sound_beeps": "三声轻响",
+	"sound_bell": "轻柔铃声",
+	"sound_chimes": "明亮风铃",
+	"sound_knock": "敲门声",
+	"sound_silent": "静音(仅通知)",
+	"sound_custom_choose": "自定义文件…",
+	"sound_custom_saved": "自定义文件",
+	"sound_too_large": "文件过大(最大 500 KB)。",
+	"sound_storage_error": "无法保存 —— 浏览器存储可能已满。",
 
 	"why_title": "为什么有这个",
 	"why_meta_description": "为什么短而频繁的走动休息有意义 —— 用真实文献支持,不夸大。",
