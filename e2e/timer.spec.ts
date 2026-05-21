@@ -189,6 +189,97 @@ test.describe('i18n', () => {
 	});
 });
 
+test.describe('persistent alarm', () => {
+	test('the alert repeats until acknowledged (dev-scaled interval)', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '1 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+		await expect(page.getByTestId('alert-heading')).toBeVisible({ timeout: 5000 });
+		// The repeat counter only appears once the alarm has fired at least twice.
+		await expect(page.getByTestId('alert-count')).toBeVisible({ timeout: 3000 });
+	});
+
+	test('clicking snooze stops the repeating alarm', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '1 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+		await expect(page.getByTestId('alert-heading')).toBeVisible({ timeout: 5000 });
+		await page.getByRole('button', { name: 'Snooze 5 min' }).click();
+		await expect(page.getByText('Next break in')).toBeVisible();
+		await expect(page.getByTestId('alert-count')).toHaveCount(0);
+	});
+
+	test('clicking "I\'m standing up" stops the repeating alarm', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '1 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+		await expect(page.getByTestId('alert-heading')).toBeVisible({ timeout: 5000 });
+		await page.getByRole('button', { name: "I'm standing up" }).click();
+		await expect(page.getByText('Walk it out')).toBeVisible();
+		await expect(page.getByTestId('alert-count')).toHaveCount(0);
+	});
+});
+
+test.describe('sound switcher', () => {
+	test('exposes all six sound options', async ({ page }) => {
+		await gotoApp(page);
+		const options = await page.getByTestId('sound-switcher').locator('option').all();
+		expect(options.length).toBe(6);
+	});
+
+	test('selecting a preset persists to localStorage and survives reload', async ({ page }) => {
+		await gotoApp(page);
+		await page.getByTestId('sound-switcher').selectOption('bell');
+		const stored = await page.evaluate(() => localStorage.getItem('onyourfeet:sound'));
+		expect(stored).toBe('bell');
+
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await expect(page.getByTestId('sound-switcher')).toHaveValue('bell');
+	});
+
+	test('picking a preset does not touch custom-sound storage', async ({ page }) => {
+		await gotoApp(page);
+		await page.getByTestId('sound-switcher').selectOption('silent');
+		const custom = await page.evaluate(() => localStorage.getItem('onyourfeet:customSound'));
+		expect(custom).toBeNull();
+	});
+});
+
+test.describe('notification permission UI', () => {
+	async function withPermission(page: Page, value: NotificationPermission) {
+		await page.addInitScript((perm) => {
+			Object.defineProperty(window.Notification, 'permission', {
+				get() {
+					return perm as NotificationPermission;
+				},
+				configurable: true
+			});
+		}, value);
+	}
+
+	test('granted: no banner, no enable link', async ({ page }) => {
+		await withPermission(page, 'granted');
+		await gotoApp(page);
+		await expect(page.getByTestId('notification-denied-banner')).toHaveCount(0);
+		await expect(page.getByTestId('enable-notifications')).toHaveCount(0);
+	});
+
+	test('default: shows enable link, no denied banner', async ({ page }) => {
+		await withPermission(page, 'default');
+		await gotoApp(page);
+		await expect(page.getByTestId('notification-denied-banner')).toHaveCount(0);
+		await expect(page.getByTestId('enable-notifications')).toBeVisible();
+	});
+
+	test('denied: shows banner, no enable link', async ({ page }) => {
+		await withPermission(page, 'denied');
+		await gotoApp(page);
+		await expect(page.getByTestId('notification-denied-banner')).toBeVisible();
+		await expect(page.getByTestId('enable-notifications')).toHaveCount(0);
+	});
+});
+
 test.describe('theme toggle', () => {
 	test('cycles system → light → dark → system and persists', async ({ page }) => {
 		await gotoApp(page);
