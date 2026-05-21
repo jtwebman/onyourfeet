@@ -275,6 +275,102 @@ test.describe('sound settings', () => {
 	});
 });
 
+test.describe('timer persistence', () => {
+	test('timer keeps running when navigating to /why and back', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '10 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+		await expect(page.getByText('Next break in')).toBeVisible();
+
+		// Navigate to why page
+		await page.getByRole('link', { name: /Why this exists/ }).click();
+		await expect(page.getByRole('heading', { name: 'Why this exists' })).toBeVisible();
+
+		// Wait a bit so the countdown ticks while we're "away"
+		await page.waitForTimeout(1500);
+
+		// Navigate back to timer
+		await page.getByRole('link', { name: /Back to timer/ }).click();
+		await expect(page.getByText('Next break in')).toBeVisible();
+	});
+
+	test('timer survives a full page reload (browser close simulation)', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '10 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+		await expect(page.getByText('Next break in')).toBeVisible();
+
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await expect(page.getByText('Next break in')).toBeVisible();
+	});
+
+	test('within stale window: alarm fires on restore', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		// Seed a state where the work timer "ended" 10 min ago — well inside the 45-min window
+		await page.evaluate(() => {
+			const tenMinAgo = Date.now() - 10 * 60 * 1000;
+			localStorage.setItem(
+				'onyourfeet:timerState',
+				JSON.stringify({ phase: 'working', workValue: 30, endAt: tenMinAgo })
+			);
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await expect(page.getByTestId('alert-heading')).toBeVisible();
+	});
+
+	test('beyond stale window: timer resets to idle and clears state', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		// Seed a state where the work timer "ended" 60 min ago — beyond 45-min window
+		await page.evaluate(() => {
+			const sixtyMinAgo = Date.now() - 60 * 60 * 1000;
+			localStorage.setItem(
+				'onyourfeet:timerState',
+				JSON.stringify({ phase: 'working', workValue: 30, endAt: sixtyMinAgo })
+			);
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await expect(page.getByRole('button', { name: 'Start' })).toBeVisible();
+		const stored = await page.evaluate(() => localStorage.getItem('onyourfeet:timerState'));
+		expect(stored).toBeNull();
+	});
+
+	test('alert_work state restored when within window', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await page.evaluate(() => {
+			const fiveMinAgo = Date.now() - 5 * 60 * 1000;
+			localStorage.setItem(
+				'onyourfeet:timerState',
+				JSON.stringify({ phase: 'alert_work', workValue: 45, alertStartedAt: fiveMinAgo })
+			);
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await expect(page.getByTestId('alert-heading')).toBeVisible();
+	});
+
+	test('reset clears persisted state', async ({ page }) => {
+		await gotoApp(page, '/?dev=1');
+		await page.getByRole('button', { name: '10 sec' }).click();
+		await page.getByRole('button', { name: 'Start' }).click();
+		await expect(page.getByText('Next break in')).toBeVisible();
+
+		const beforeCancel = await page.evaluate(() => localStorage.getItem('onyourfeet:timerState'));
+		expect(beforeCancel).not.toBeNull();
+
+		await page.getByRole('button', { name: 'Cancel' }).click();
+		await expect(page.getByRole('button', { name: 'Start' })).toBeVisible();
+
+		const afterCancel = await page.evaluate(() => localStorage.getItem('onyourfeet:timerState'));
+		expect(afterCancel).toBeNull();
+	});
+});
+
 test.describe('restart from done state', () => {
 	test('"Start another" button immediately restarts the work timer', async ({ page }) => {
 		await gotoApp(page, '/?dev=1');
