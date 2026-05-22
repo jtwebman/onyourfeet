@@ -2,7 +2,7 @@
 	"name": "onyourfeet",
 	"description": "A no-frills stand-up reminder and desk break timer for office workers. Start a 30/45/60-minute work timer and get nudged to take a 5-minute walking break.",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "AGPL-3.0-or-later",
 	"homepage": "https://onyourfeet.app",
 	"repository": {
