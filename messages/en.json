@@ -35,7 +35,7 @@
 
 	"sound_label": "Alert sound",
 	"sound_settings_label": "Sound settings",
-	"sound_settings_hint": "The custom file (if uploaded) is shared between both alarms.",
+	"sound_settings_hint": "Each alarm has its own custom-file slot. To use the same file for both, upload it to each separately.",
 	"sound_standup_label": "Stand-up alarm",
 	"sound_done_label": "Break-complete alarm",
 	"sound_beeps": "Three soft beeps",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "Currently uploaded",
 	"sound_custom_replace": "Replace",
 	"sound_custom_clear": "Clear",
+	"sound_custom_rename": "Rename",
+	"sound_custom_rename_save": "Save",
+	"sound_custom_rename_cancel": "Cancel",
 	"sound_too_large": "File too large (500 KB max).",
 	"sound_storage_error": "Could not save — browser storage might be full.",
 

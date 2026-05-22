@@ -35,7 +35,7 @@
 
 	"sound_label": "提醒声音",
 	"sound_settings_label": "声音设置",
-	"sound_settings_hint": "上传的自定义文件在两个闹钟之间共享。",
+	"sound_settings_hint": "每个闹钟都有独立的自定义文件槽位。要在两个闹钟使用同一文件,请分别上传。",
 	"sound_standup_label": "起身闹钟",
 	"sound_done_label": "休息结束闹钟",
 	"sound_beeps": "三声轻响",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "当前文件",
 	"sound_custom_replace": "替换",
 	"sound_custom_clear": "清除",
+	"sound_custom_rename": "重命名",
+	"sound_custom_rename_save": "保存",
+	"sound_custom_rename_cancel": "取消",
 	"sound_too_large": "文件过大(最大 500 KB)。",
 	"sound_storage_error": "无法保存 —— 浏览器存储可能已满。",
 

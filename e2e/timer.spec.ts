@@ -274,31 +274,43 @@ test.describe('sound settings', () => {
 		expect(custom).toBeNull();
 	});
 
-	test('custom sound row appears with filename, replace and clear buttons', async ({ page }) => {
+	test('stand-up custom card appears with filename, rename/replace/clear buttons', async ({
+		page
+	}) => {
 		await page.goto('/');
 		await page.locator('html[data-hydrated="true"]').waitFor();
-		// Pre-seed a custom sound (real audio file would normally come from FileReader)
 		await page.evaluate(() => {
-			localStorage.setItem('onyourfeet:customSound', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
-			localStorage.setItem('onyourfeet:customSoundName', 'morning-bell.mp3');
+			localStorage.setItem(
+				'onyourfeet:customSoundStandUp',
+				'data:audio/wav;base64,UklGRiQAAABXQVZF'
+			);
+			localStorage.setItem('onyourfeet:customSoundStandUpName', 'morning-bell.mp3');
 			localStorage.setItem('onyourfeet:sound', 'custom');
 		});
 		await page.reload();
 		await page.locator('html[data-hydrated="true"]').waitFor();
 
 		await page.getByTestId('sound-settings-button').click();
-		await expect(page.getByTestId('custom-sound-row')).toBeVisible();
-		await expect(page.getByTestId('custom-sound-name')).toHaveText('morning-bell.mp3');
-		await expect(page.getByTestId('custom-sound-replace')).toBeVisible();
-		await expect(page.getByTestId('custom-sound-clear')).toBeVisible();
+		await expect(page.getByTestId('standup-custom-row')).toBeVisible();
+		await expect(page.getByTestId('standup-custom-name')).toHaveText('morning-bell.mp3');
+		await expect(page.getByTestId('standup-custom-rename')).toBeVisible();
+		await expect(page.getByTestId('standup-custom-replace')).toBeVisible();
+		await expect(page.getByTestId('standup-custom-clear')).toBeVisible();
+		// Done alarm has no custom row since its slot is empty
+		await expect(page.getByTestId('done-custom-row')).toHaveCount(0);
 	});
 
-	test('clear button removes custom sound and reverts dropdowns', async ({ page }) => {
+	test('stand-up and done alarms hold independent custom files', async ({ page }) => {
 		await page.goto('/');
 		await page.locator('html[data-hydrated="true"]').waitFor();
 		await page.evaluate(() => {
-			localStorage.setItem('onyourfeet:customSound', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
-			localStorage.setItem('onyourfeet:customSoundName', 'buzz.mp3');
+			localStorage.setItem(
+				'onyourfeet:customSoundStandUp',
+				'data:audio/wav;base64,UklGRiQAAABXQVZF'
+			);
+			localStorage.setItem('onyourfeet:customSoundStandUpName', 'urgent-buzz.mp3');
+			localStorage.setItem('onyourfeet:customSoundDone', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
+			localStorage.setItem('onyourfeet:customSoundDoneName', 'ding.mp3');
 			localStorage.setItem('onyourfeet:sound', 'custom');
 			localStorage.setItem('onyourfeet:doneSound', 'custom');
 		});
@@ -306,43 +318,150 @@ test.describe('sound settings', () => {
 		await page.locator('html[data-hydrated="true"]').waitFor();
 
 		await page.getByTestId('sound-settings-button').click();
-		await page.getByTestId('custom-sound-clear').click();
-
-		await expect(page.getByTestId('custom-sound-row')).toHaveCount(0);
-		// Both selects should fall back to their defaults
-		await expect(page.getByTestId('standup-sound-select')).toHaveValue('beeps');
-		await expect(page.getByTestId('done-sound-select')).toHaveValue('chimes');
-
-		const stored = await page.evaluate(() => ({
-			data: localStorage.getItem('onyourfeet:customSound'),
-			name: localStorage.getItem('onyourfeet:customSoundName')
-		}));
-		expect(stored.data).toBeNull();
-		expect(stored.name).toBeNull();
+		await expect(page.getByTestId('standup-custom-name')).toHaveText('urgent-buzz.mp3');
+		await expect(page.getByTestId('done-custom-name')).toHaveText('ding.mp3');
 	});
 
-	test('replace button triggers file picker (input is clickable)', async ({ page }) => {
+	test('clear on stand-up reverts only its dropdown and keeps done custom', async ({ page }) => {
 		await page.goto('/');
 		await page.locator('html[data-hydrated="true"]').waitFor();
 		await page.evaluate(() => {
-			localStorage.setItem('onyourfeet:customSound', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
-			localStorage.setItem('onyourfeet:customSoundName', 'old.mp3');
+			localStorage.setItem(
+				'onyourfeet:customSoundStandUp',
+				'data:audio/wav;base64,UklGRiQAAABXQVZF'
+			);
+			localStorage.setItem('onyourfeet:customSoundStandUpName', 'standup.mp3');
+			localStorage.setItem('onyourfeet:customSoundDone', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
+			localStorage.setItem('onyourfeet:customSoundDoneName', 'done.mp3');
+			localStorage.setItem('onyourfeet:sound', 'custom');
+			localStorage.setItem('onyourfeet:doneSound', 'custom');
 		});
 		await page.reload();
 		await page.locator('html[data-hydrated="true"]').waitFor();
 
 		await page.getByTestId('sound-settings-button').click();
-		// Use setInputFiles to simulate the picker selecting a new file
+		await page.getByTestId('standup-custom-clear').click();
+
+		await expect(page.getByTestId('standup-custom-row')).toHaveCount(0);
+		await expect(page.getByTestId('done-custom-row')).toBeVisible();
+		await expect(page.getByTestId('standup-sound-select')).toHaveValue('beeps');
+		await expect(page.getByTestId('done-sound-select')).toHaveValue('custom');
+
+		const stored = await page.evaluate(() => ({
+			standUpData: localStorage.getItem('onyourfeet:customSoundStandUp'),
+			standUpName: localStorage.getItem('onyourfeet:customSoundStandUpName'),
+			doneData: localStorage.getItem('onyourfeet:customSoundDone'),
+			doneName: localStorage.getItem('onyourfeet:customSoundDoneName')
+		}));
+		expect(stored.standUpData).toBeNull();
+		expect(stored.standUpName).toBeNull();
+		expect(stored.doneData).not.toBeNull();
+		expect(stored.doneName).toBe('done.mp3');
+	});
+
+	test('replace on done uploads independently of stand-up', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await page.evaluate(() => {
+			localStorage.setItem('onyourfeet:customSoundDone', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
+			localStorage.setItem('onyourfeet:customSoundDoneName', 'old-ding.mp3');
+			localStorage.setItem('onyourfeet:doneSound', 'custom');
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+
+		await page.getByTestId('sound-settings-button').click();
+		await page.getByTestId('done-custom-replace').click();
 		await page.getByTestId('sound-file-input').setInputFiles({
-			name: 'new-alarm.mp3',
+			name: 'new-ding.mp3',
 			mimeType: 'audio/mpeg',
 			buffer: Buffer.from([0xff, 0xfb, 0x90, 0x44])
 		});
-		await expect(page.getByTestId('custom-sound-name')).toHaveText('new-alarm.mp3');
-		const storedName = await page.evaluate(() =>
-			localStorage.getItem('onyourfeet:customSoundName')
+
+		await expect(page.getByTestId('done-custom-name')).toHaveText('new-ding.mp3');
+		const stored = await page.evaluate(() => ({
+			doneName: localStorage.getItem('onyourfeet:customSoundDoneName'),
+			standUpData: localStorage.getItem('onyourfeet:customSoundStandUp')
+		}));
+		expect(stored.doneName).toBe('new-ding.mp3');
+		expect(stored.standUpData).toBeNull();
+	});
+
+	test('rename: user-chosen label replaces filename in storage and UI', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await page.evaluate(() => {
+			localStorage.setItem(
+				'onyourfeet:customSoundStandUp',
+				'data:audio/wav;base64,UklGRiQAAABXQVZF'
+			);
+			localStorage.setItem('onyourfeet:customSoundStandUpName', 'gargle_v2_FINAL.mp3');
+			localStorage.setItem('onyourfeet:sound', 'custom');
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+
+		await page.getByTestId('sound-settings-button').click();
+		await page.getByTestId('standup-custom-rename').click();
+
+		const input = page.getByTestId('standup-custom-rename-input');
+		await expect(input).toBeFocused();
+		await input.fill('Morning Bell');
+		await page.getByTestId('standup-custom-rename-save').click();
+
+		await expect(page.getByTestId('standup-custom-name')).toHaveText('Morning Bell');
+		const stored = await page.evaluate(() =>
+			localStorage.getItem('onyourfeet:customSoundStandUpName')
 		);
-		expect(storedName).toBe('new-alarm.mp3');
+		expect(stored).toBe('Morning Bell');
+	});
+
+	test('rename: Escape cancels and leaves storage unchanged', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await page.evaluate(() => {
+			localStorage.setItem(
+				'onyourfeet:customSoundStandUp',
+				'data:audio/wav;base64,UklGRiQAAABXQVZF'
+			);
+			localStorage.setItem('onyourfeet:customSoundStandUpName', 'keep-me.mp3');
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+
+		await page.getByTestId('sound-settings-button').click();
+		await page.getByTestId('standup-custom-rename').click();
+		await page.getByTestId('standup-custom-rename-input').fill('Never saved');
+		await page.keyboard.press('Escape');
+
+		await expect(page.getByTestId('standup-custom-name')).toHaveText('keep-me.mp3');
+		const stored = await page.evaluate(() =>
+			localStorage.getItem('onyourfeet:customSoundStandUpName')
+		);
+		expect(stored).toBe('keep-me.mp3');
+	});
+
+	test('legacy custom sound is migrated into stand-up slot', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await page.evaluate(() => {
+			localStorage.clear();
+			localStorage.setItem('onyourfeet:customSound', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
+			localStorage.setItem('onyourfeet:customSoundName', 'legacy.mp3');
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+
+		const stored = await page.evaluate(() => ({
+			legacy: localStorage.getItem('onyourfeet:customSound'),
+			legacyName: localStorage.getItem('onyourfeet:customSoundName'),
+			standUp: localStorage.getItem('onyourfeet:customSoundStandUp'),
+			standUpName: localStorage.getItem('onyourfeet:customSoundStandUpName')
+		}));
+		expect(stored.legacy).toBeNull();
+		expect(stored.legacyName).toBeNull();
+		expect(stored.standUp).not.toBeNull();
+		expect(stored.standUpName).toBe('legacy.mp3');
 	});
 });
 

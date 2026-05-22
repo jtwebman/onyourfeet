@@ -35,7 +35,7 @@
 
 	"sound_label": "アラーム音",
 	"sound_settings_label": "サウンド設定",
-	"sound_settings_hint": "カスタムファイル(アップロードした場合)は両方のアラームで共有されます。",
+	"sound_settings_hint": "各アラームに専用のカスタムファイル枠があります。両方で同じファイルを使うには、それぞれに別途アップロードしてください。",
 	"sound_standup_label": "立ち上がりアラーム",
 	"sound_done_label": "休憩終了アラーム",
 	"sound_beeps": "やさしいビープ3回",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "現在のファイル",
 	"sound_custom_replace": "置き換え",
 	"sound_custom_clear": "削除",
+	"sound_custom_rename": "名前を変更",
+	"sound_custom_rename_save": "保存",
+	"sound_custom_rename_cancel": "キャンセル",
 	"sound_too_large": "ファイルが大きすぎます(最大500 KB)。",
 	"sound_storage_error": "保存できませんでした — ブラウザのストレージがいっぱいかもしれません。",
 

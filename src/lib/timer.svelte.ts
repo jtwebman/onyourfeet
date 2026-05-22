@@ -1,12 +1,13 @@
 import { browser } from '$app/environment';
 import * as m from '$lib/paraglide/messages.js';
 import {
-	CUSTOM_SOUND_STORAGE_KEY,
+	CUSTOM_SOUND_KEYS,
 	DEFAULT_DONE_SOUND,
 	DEFAULT_STANDUP_SOUND,
 	DONE_SOUND_STORAGE_KEY,
 	SOUND_STORAGE_KEY,
 	isSoundKind,
+	migrateLegacyCustomSound,
 	playSound
 } from '$lib/sounds';
 
@@ -76,6 +77,8 @@ class TimerStore {
 	init(opts: { dev: boolean }) {
 		if (this.initialized || !browser) return;
 		this.initialized = true;
+
+		migrateLegacyCustomSound();
 
 		this.isDevMode = opts.dev;
 
@@ -211,7 +214,7 @@ class TimerStore {
 		const fallback = alarm === 'standUp' ? DEFAULT_STANDUP_SOUND : DEFAULT_DONE_SOUND;
 		const saved = this.safeRead(key);
 		const kind = saved && isSoundKind(saved) ? saved : fallback;
-		const customSound = this.safeRead(CUSTOM_SOUND_STORAGE_KEY);
+		const customSound = this.safeRead(CUSTOM_SOUND_KEYS[alarm].data);
 		playSound(kind, customSound);
 	}
 
