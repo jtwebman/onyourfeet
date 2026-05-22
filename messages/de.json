@@ -35,7 +35,7 @@
 
 	"sound_label": "Alarmton",
 	"sound_settings_label": "Sound-Einstellungen",
-	"sound_settings_hint": "Die eigene Datei (falls hochgeladen) wird von beiden Alarmen genutzt.",
+	"sound_settings_hint": "Jeder Alarm hat seinen eigenen Datei-Slot. Um dieselbe Datei für beide zu nutzen, lade sie für jeden separat hoch.",
 	"sound_standup_label": "Aufsteh-Alarm",
 	"sound_done_label": "Pause-Ende-Alarm",
 	"sound_beeps": "Drei sanfte Pieptöne",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "Aktuelle Datei",
 	"sound_custom_replace": "Ersetzen",
 	"sound_custom_clear": "Entfernen",
+	"sound_custom_rename": "Umbenennen",
+	"sound_custom_rename_save": "Speichern",
+	"sound_custom_rename_cancel": "Abbrechen",
 	"sound_too_large": "Datei zu groß (max. 500 KB).",
 	"sound_storage_error": "Konnte nicht gespeichert werden — Browser-Speicher ist evtl. voll.",
 

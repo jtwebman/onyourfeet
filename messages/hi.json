@@ -35,7 +35,7 @@
 
 	"sound_label": "अलर्ट की आवाज़",
 	"sound_settings_label": "ध्वनि सेटिंग्स",
-	"sound_settings_hint": "कस्टम फ़ाइल (अगर अपलोड हो) दोनों अलार्म के लिए साझा होती है।",
+	"sound_settings_hint": "हर अलार्म के लिए अलग कस्टम-फ़ाइल स्लॉट है। दोनों में एक ही फ़ाइल इस्तेमाल करनी हो तो दोनों में अलग-अलग अपलोड करें।",
 	"sound_standup_label": "खड़े होने का अलार्म",
 	"sound_done_label": "ब्रेक खत्म होने का अलार्म",
 	"sound_beeps": "तीन हल्की बीप",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "मौजूदा फ़ाइल",
 	"sound_custom_replace": "बदलें",
 	"sound_custom_clear": "हटाएँ",
+	"sound_custom_rename": "नाम बदलें",
+	"sound_custom_rename_save": "सहेजें",
+	"sound_custom_rename_cancel": "रद्द करें",
 	"sound_too_large": "फ़ाइल बहुत बड़ी है (अधिकतम 500 KB)।",
 	"sound_storage_error": "सहेज नहीं सके — ब्राउज़र स्टोरेज शायद भर गया है।",
 

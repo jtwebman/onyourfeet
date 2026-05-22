@@ -35,7 +35,7 @@
 
 	"sound_label": "Dźwięk alarmu",
 	"sound_settings_label": "Ustawienia dźwięku",
-	"sound_settings_hint": "Własny plik (jeśli wgrany) jest używany przez oba alarmy.",
+	"sound_settings_hint": "Każdy alarm ma swój własny plik. Aby użyć tego samego w obu, wgraj go osobno do każdego.",
 	"sound_standup_label": "Alarm wstawania",
 	"sound_done_label": "Alarm końca przerwy",
 	"sound_beeps": "Trzy ciche piknięcia",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "Bieżący plik",
 	"sound_custom_replace": "Zmień",
 	"sound_custom_clear": "Usuń",
+	"sound_custom_rename": "Zmień nazwę",
+	"sound_custom_rename_save": "Zapisz",
+	"sound_custom_rename_cancel": "Anuluj",
 	"sound_too_large": "Plik za duży (maks. 500 KB).",
 	"sound_storage_error": "Nie udało się zapisać — pamięć przeglądarki może być pełna.",
 

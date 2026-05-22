@@ -35,7 +35,7 @@
 
 	"sound_label": "Alarmgeluid",
 	"sound_settings_label": "Geluidsinstellingen",
-	"sound_settings_hint": "Het eigen bestand (indien geüpload) wordt door beide alarmen gebruikt.",
+	"sound_settings_hint": "Elk alarm heeft zijn eigen bestand-slot. Wil je hetzelfde bestand voor beide? Upload het dan per alarm apart.",
 	"sound_standup_label": "Opsta-alarm",
 	"sound_done_label": "Einde-pauze-alarm",
 	"sound_beeps": "Drie zachte piepjes",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "Huidig bestand",
 	"sound_custom_replace": "Vervangen",
 	"sound_custom_clear": "Verwijderen",
+	"sound_custom_rename": "Hernoemen",
+	"sound_custom_rename_save": "Opslaan",
+	"sound_custom_rename_cancel": "Annuleren",
 	"sound_too_large": "Bestand te groot (max. 500 KB).",
 	"sound_storage_error": "Opslaan mislukt — de browseropslag is mogelijk vol.",
 

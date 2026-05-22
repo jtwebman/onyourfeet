@@ -35,7 +35,7 @@
 
 	"sound_label": "Suono dell'avviso",
 	"sound_settings_label": "Impostazioni audio",
-	"sound_settings_hint": "Il file personalizzato (se caricato) è condiviso tra entrambi gli allarmi.",
+	"sound_settings_hint": "Ogni allarme ha il suo file personalizzato. Per usare lo stesso file in entrambi, caricalo separatamente in ciascuno.",
 	"sound_standup_label": "Allarme per alzarsi",
 	"sound_done_label": "Allarme fine pausa",
 	"sound_beeps": "Tre bip leggeri",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "File attuale",
 	"sound_custom_replace": "Sostituisci",
 	"sound_custom_clear": "Rimuovi",
+	"sound_custom_rename": "Rinomina",
+	"sound_custom_rename_save": "Salva",
+	"sound_custom_rename_cancel": "Annulla",
 	"sound_too_large": "File troppo grande (max 500 KB).",
 	"sound_storage_error": "Impossibile salvare — lo spazio del browser potrebbe essere pieno.",
 

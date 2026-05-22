@@ -35,7 +35,7 @@
 
 	"sound_label": "Son d'alerte",
 	"sound_settings_label": "Réglages du son",
-	"sound_settings_hint": "Le fichier personnalisé (s'il est envoyé) est partagé entre les deux alarmes.",
+	"sound_settings_hint": "Chaque alarme a son propre fichier personnalisé. Pour utiliser le même pour les deux, envoie-le séparément à chacune.",
 	"sound_standup_label": "Alarme pour se lever",
 	"sound_done_label": "Alarme de fin de pause",
 	"sound_beeps": "Trois bips doux",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "Fichier actuel",
 	"sound_custom_replace": "Remplacer",
 	"sound_custom_clear": "Effacer",
+	"sound_custom_rename": "Renommer",
+	"sound_custom_rename_save": "Enregistrer",
+	"sound_custom_rename_cancel": "Annuler",
 	"sound_too_large": "Fichier trop volumineux (500 Ko max).",
 	"sound_storage_error": "Enregistrement impossible — le stockage du navigateur est peut-être plein.",
 

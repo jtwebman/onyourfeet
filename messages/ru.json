@@ -35,7 +35,7 @@
 
 	"sound_label": "Звук сигнала",
 	"sound_settings_label": "Настройки звука",
-	"sound_settings_hint": "Свой файл (если загружен) используется для обоих сигналов.",
+	"sound_settings_hint": "У каждого сигнала свой собственный файл. Чтобы использовать один и тот же — загрузите его в каждый отдельно.",
 	"sound_standup_label": "Сигнал «встать»",
 	"sound_done_label": "Сигнал конца перерыва",
 	"sound_beeps": "Три мягких бипа",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "Текущий файл",
 	"sound_custom_replace": "Заменить",
 	"sound_custom_clear": "Удалить",
+	"sound_custom_rename": "Переименовать",
+	"sound_custom_rename_save": "Сохранить",
+	"sound_custom_rename_cancel": "Отмена",
 	"sound_too_large": "Файл слишком большой (макс. 500 КБ).",
 	"sound_storage_error": "Не удалось сохранить — возможно, хранилище браузера переполнено.",
 

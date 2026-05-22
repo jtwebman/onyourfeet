@@ -35,7 +35,7 @@
 
 	"sound_label": "Som do alerta",
 	"sound_settings_label": "Ajustes de som",
-	"sound_settings_hint": "O arquivo personalizado (se enviado) é usado pelos dois alarmes.",
+	"sound_settings_hint": "Cada alarme tem seu próprio arquivo personalizado. Para usar o mesmo nos dois, envie-o separadamente em cada um.",
 	"sound_standup_label": "Alarme para levantar",
 	"sound_done_label": "Alarme de fim de pausa",
 	"sound_beeps": "Três bipes suaves",
@@ -48,6 +48,9 @@
 	"sound_custom_current_label": "Arquivo atual",
 	"sound_custom_replace": "Substituir",
 	"sound_custom_clear": "Remover",
+	"sound_custom_rename": "Renomear",
+	"sound_custom_rename_save": "Salvar",
+	"sound_custom_rename_cancel": "Cancelar",
 	"sound_too_large": "Arquivo grande demais (máx. 500 KB).",
 	"sound_storage_error": "Não foi possível salvar — o armazenamento do navegador pode estar cheio.",
 

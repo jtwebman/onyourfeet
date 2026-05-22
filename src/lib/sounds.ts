@@ -11,9 +11,40 @@ export const SOUND_KINDS: ReadonlyArray<SoundKind> = [
 
 export const SOUND_STORAGE_KEY = 'onyourfeet:sound';
 export const DONE_SOUND_STORAGE_KEY = 'onyourfeet:doneSound';
-export const CUSTOM_SOUND_STORAGE_KEY = 'onyourfeet:customSound';
-export const CUSTOM_SOUND_NAME_KEY = 'onyourfeet:customSoundName';
+
+export const CUSTOM_SOUND_KEYS = {
+	standUp: {
+		data: 'onyourfeet:customSoundStandUp',
+		name: 'onyourfeet:customSoundStandUpName'
+	},
+	done: {
+		data: 'onyourfeet:customSoundDone',
+		name: 'onyourfeet:customSoundDoneName'
+	}
+} as const;
+
+/** Legacy shared-custom keys from before the per-alarm split. Migrated on mount. */
+export const LEGACY_CUSTOM_SOUND_KEY = 'onyourfeet:customSound';
+export const LEGACY_CUSTOM_SOUND_NAME_KEY = 'onyourfeet:customSoundName';
+
 export const CUSTOM_SOUND_MAX_BYTES = 500_000;
+
+export function migrateLegacyCustomSound() {
+	try {
+		const oldData = localStorage.getItem(LEGACY_CUSTOM_SOUND_KEY);
+		if (!oldData) return;
+		const oldName = localStorage.getItem(LEGACY_CUSTOM_SOUND_NAME_KEY);
+		// Only seed the standUp slot if it's empty so we don't clobber a new upload.
+		if (!localStorage.getItem(CUSTOM_SOUND_KEYS.standUp.data)) {
+			localStorage.setItem(CUSTOM_SOUND_KEYS.standUp.data, oldData);
+			if (oldName) localStorage.setItem(CUSTOM_SOUND_KEYS.standUp.name, oldName);
+		}
+		localStorage.removeItem(LEGACY_CUSTOM_SOUND_KEY);
+		localStorage.removeItem(LEGACY_CUSTOM_SOUND_NAME_KEY);
+	} catch {
+		// ignore
+	}
+}
 
 export const DEFAULT_STANDUP_SOUND: SoundKind = 'beeps';
 export const DEFAULT_DONE_SOUND: SoundKind = 'chimes';
