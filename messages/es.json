@@ -45,6 +45,9 @@
 	"sound_silent": "Silencio (solo notificación)",
 	"sound_custom_choose": "Archivo personalizado…",
 	"sound_custom_saved": "Archivo personalizado",
+	"sound_custom_current_label": "Archivo actual",
+	"sound_custom_replace": "Reemplazar",
+	"sound_custom_clear": "Borrar",
 	"sound_too_large": "Archivo demasiado grande (máx. 500 KB).",
 	"sound_storage_error": "No se pudo guardar — el almacenamiento del navegador podría estar lleno.",
 

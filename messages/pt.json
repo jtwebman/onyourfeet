@@ -45,6 +45,9 @@
 	"sound_silent": "Silencioso (só notificação)",
 	"sound_custom_choose": "Arquivo personalizado…",
 	"sound_custom_saved": "Arquivo personalizado",
+	"sound_custom_current_label": "Arquivo atual",
+	"sound_custom_replace": "Substituir",
+	"sound_custom_clear": "Remover",
 	"sound_too_large": "Arquivo grande demais (máx. 500 KB).",
 	"sound_storage_error": "Não foi possível salvar — o armazenamento do navegador pode estar cheio.",
 

@@ -45,6 +45,9 @@
 	"sound_silent": "Stumm (nur Benachrichtigung)",
 	"sound_custom_choose": "Eigene Datei…",
 	"sound_custom_saved": "Eigene Datei",
+	"sound_custom_current_label": "Aktuelle Datei",
+	"sound_custom_replace": "Ersetzen",
+	"sound_custom_clear": "Entfernen",
 	"sound_too_large": "Datei zu groß (max. 500 KB).",
 	"sound_storage_error": "Konnte nicht gespeichert werden — Browser-Speicher ist evtl. voll.",
 

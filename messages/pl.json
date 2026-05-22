@@ -45,6 +45,9 @@
 	"sound_silent": "Cisza (tylko powiadomienie)",
 	"sound_custom_choose": "Własny plik…",
 	"sound_custom_saved": "Własny plik",
+	"sound_custom_current_label": "Bieżący plik",
+	"sound_custom_replace": "Zmień",
+	"sound_custom_clear": "Usuń",
 	"sound_too_large": "Plik za duży (maks. 500 KB).",
 	"sound_storage_error": "Nie udało się zapisać — pamięć przeglądarki może być pełna.",
 

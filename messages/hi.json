@@ -45,6 +45,9 @@
 	"sound_silent": "मौन (केवल सूचना)",
 	"sound_custom_choose": "कस्टम फ़ाइल…",
 	"sound_custom_saved": "कस्टम फ़ाइल",
+	"sound_custom_current_label": "मौजूदा फ़ाइल",
+	"sound_custom_replace": "बदलें",
+	"sound_custom_clear": "हटाएँ",
 	"sound_too_large": "फ़ाइल बहुत बड़ी है (अधिकतम 500 KB)।",
 	"sound_storage_error": "सहेज नहीं सके — ब्राउज़र स्टोरेज शायद भर गया है।",
 
