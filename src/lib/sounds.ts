@@ -12,6 +12,7 @@ export const SOUND_KINDS: ReadonlyArray<SoundKind> = [
 export const SOUND_STORAGE_KEY = 'onyourfeet:sound';
 export const DONE_SOUND_STORAGE_KEY = 'onyourfeet:doneSound';
 export const CUSTOM_SOUND_STORAGE_KEY = 'onyourfeet:customSound';
+export const CUSTOM_SOUND_NAME_KEY = 'onyourfeet:customSoundName';
 export const CUSTOM_SOUND_MAX_BYTES = 500_000;
 
 export const DEFAULT_STANDUP_SOUND: SoundKind = 'beeps';

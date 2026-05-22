@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import {
 		CUSTOM_SOUND_MAX_BYTES,
+		CUSTOM_SOUND_NAME_KEY,
 		CUSTOM_SOUND_STORAGE_KEY,
 		DEFAULT_DONE_SOUND,
 		DEFAULT_STANDUP_SOUND,
@@ -18,6 +19,7 @@
 	let standUpKind = $state<SoundKind>(DEFAULT_STANDUP_SOUND);
 	let doneKind = $state<SoundKind>(DEFAULT_DONE_SOUND);
 	let customSound = $state<string | null>(null);
+	let customSoundName = $state<string | null>(null);
 	let errorMessage = $state<string | null>(null);
 	let isOpen = $state(false);
 	let pendingTarget = $state<Target | null>(null);
@@ -31,6 +33,7 @@
 		const done = localStorage.getItem(DONE_SOUND_STORAGE_KEY);
 		if (done && isSoundKind(done)) doneKind = done;
 		customSound = localStorage.getItem(CUSTOM_SOUND_STORAGE_KEY);
+		customSoundName = localStorage.getItem(CUSTOM_SOUND_NAME_KEY);
 	});
 
 	$effect(() => {
@@ -81,6 +84,26 @@
 		applyKind(target, value, true);
 	}
 
+	function openFilePicker() {
+		errorMessage = null;
+		fileInput?.click();
+	}
+
+	function clearCustomSound() {
+		try {
+			localStorage.removeItem(CUSTOM_SOUND_STORAGE_KEY);
+			localStorage.removeItem(CUSTOM_SOUND_NAME_KEY);
+		} catch {
+			// ignore
+		}
+		customSound = null;
+		customSoundName = null;
+		errorMessage = null;
+		// Revert any dropdown using 'custom' to its default
+		if (standUpKind === 'custom') applyKind('standUp', DEFAULT_STANDUP_SOUND, false);
+		if (doneKind === 'custom') applyKind('done', DEFAULT_DONE_SOUND, false);
+	}
+
 	function onFileChange(event: Event) {
 		const input = event.currentTarget as HTMLInputElement;
 		const file = input.files?.[0];
@@ -96,10 +119,15 @@
 			if (typeof dataUrl !== 'string') return;
 			try {
 				localStorage.setItem(CUSTOM_SOUND_STORAGE_KEY, dataUrl);
+				localStorage.setItem(CUSTOM_SOUND_NAME_KEY, file.name);
 				customSound = dataUrl;
+				customSoundName = file.name;
 				if (pendingTarget) {
 					applyKind(pendingTarget, 'custom', true);
 					pendingTarget = null;
+				} else {
+					// Replace flow — preview the new file directly
+					playSound('custom', dataUrl);
 				}
 			} catch {
 				errorMessage = m.sound_storage_error();
@@ -189,6 +217,43 @@
 				onchange={onFileChange}
 				data-testid="sound-file-input"
 			/>
+
+			{#if customSound}
+				<div
+					data-testid="custom-sound-row"
+					class="mt-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 dark:border-zinc-700 dark:bg-zinc-800/50"
+				>
+					<div class="text-xs font-medium text-zinc-600 dark:text-zinc-300">
+						{m.sound_custom_current_label()}
+					</div>
+					<div
+						data-testid="custom-sound-name"
+						class="mt-1 truncate text-sm text-zinc-900 dark:text-zinc-100"
+						title={customSoundName ?? ''}
+					>
+						{customSoundName ?? m.sound_custom_saved()}
+					</div>
+					<div class="mt-2 flex gap-3">
+						<button
+							type="button"
+							onclick={openFilePicker}
+							data-testid="custom-sound-replace"
+							class="text-xs text-emerald-700 underline hover:no-underline dark:text-emerald-400"
+						>
+							{m.sound_custom_replace()}
+						</button>
+						<button
+							type="button"
+							onclick={clearCustomSound}
+							data-testid="custom-sound-clear"
+							class="text-xs text-zinc-500 underline hover:text-zinc-700 hover:no-underline dark:hover:text-zinc-300"
+						>
+							{m.sound_custom_clear()}
+						</button>
+					</div>
+				</div>
+			{/if}
+
 			{#if errorMessage}
 				<p class="mt-3 text-xs text-red-600 dark:text-red-400">{errorMessage}</p>
 			{/if}

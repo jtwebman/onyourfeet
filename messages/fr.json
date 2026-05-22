@@ -45,6 +45,9 @@
 	"sound_silent": "Silencieux (notification seule)",
 	"sound_custom_choose": "Fichier perso…",
 	"sound_custom_saved": "Fichier perso",
+	"sound_custom_current_label": "Fichier actuel",
+	"sound_custom_replace": "Remplacer",
+	"sound_custom_clear": "Effacer",
 	"sound_too_large": "Fichier trop volumineux (500 Ko max).",
 	"sound_storage_error": "Enregistrement impossible — le stockage du navigateur est peut-être plein.",
 

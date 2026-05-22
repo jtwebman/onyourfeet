@@ -45,6 +45,9 @@
 	"sound_silent": "Stil (alleen melding)",
 	"sound_custom_choose": "Eigen bestand…",
 	"sound_custom_saved": "Eigen bestand",
+	"sound_custom_current_label": "Huidig bestand",
+	"sound_custom_replace": "Vervangen",
+	"sound_custom_clear": "Verwijderen",
 	"sound_too_large": "Bestand te groot (max. 500 KB).",
 	"sound_storage_error": "Opslaan mislukt — de browseropslag is mogelijk vol.",
 

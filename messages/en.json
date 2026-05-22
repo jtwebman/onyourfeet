@@ -45,6 +45,9 @@
 	"sound_silent": "Silent (notification only)",
 	"sound_custom_choose": "Custom file…",
 	"sound_custom_saved": "Custom file",
+	"sound_custom_current_label": "Currently uploaded",
+	"sound_custom_replace": "Replace",
+	"sound_custom_clear": "Clear",
 	"sound_too_large": "File too large (500 KB max).",
 	"sound_storage_error": "Could not save — browser storage might be full.",
 

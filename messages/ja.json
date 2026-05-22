@@ -45,6 +45,9 @@
 	"sound_silent": "無音(通知のみ)",
 	"sound_custom_choose": "カスタムファイル…",
 	"sound_custom_saved": "カスタムファイル",
+	"sound_custom_current_label": "現在のファイル",
+	"sound_custom_replace": "置き換え",
+	"sound_custom_clear": "削除",
 	"sound_too_large": "ファイルが大きすぎます(最大500 KB)。",
 	"sound_storage_error": "保存できませんでした — ブラウザのストレージがいっぱいかもしれません。",
 

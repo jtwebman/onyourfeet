@@ -273,6 +273,77 @@ test.describe('sound settings', () => {
 		const custom = await page.evaluate(() => localStorage.getItem('onyourfeet:customSound'));
 		expect(custom).toBeNull();
 	});
+
+	test('custom sound row appears with filename, replace and clear buttons', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		// Pre-seed a custom sound (real audio file would normally come from FileReader)
+		await page.evaluate(() => {
+			localStorage.setItem('onyourfeet:customSound', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
+			localStorage.setItem('onyourfeet:customSoundName', 'morning-bell.mp3');
+			localStorage.setItem('onyourfeet:sound', 'custom');
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+
+		await page.getByTestId('sound-settings-button').click();
+		await expect(page.getByTestId('custom-sound-row')).toBeVisible();
+		await expect(page.getByTestId('custom-sound-name')).toHaveText('morning-bell.mp3');
+		await expect(page.getByTestId('custom-sound-replace')).toBeVisible();
+		await expect(page.getByTestId('custom-sound-clear')).toBeVisible();
+	});
+
+	test('clear button removes custom sound and reverts dropdowns', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await page.evaluate(() => {
+			localStorage.setItem('onyourfeet:customSound', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
+			localStorage.setItem('onyourfeet:customSoundName', 'buzz.mp3');
+			localStorage.setItem('onyourfeet:sound', 'custom');
+			localStorage.setItem('onyourfeet:doneSound', 'custom');
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+
+		await page.getByTestId('sound-settings-button').click();
+		await page.getByTestId('custom-sound-clear').click();
+
+		await expect(page.getByTestId('custom-sound-row')).toHaveCount(0);
+		// Both selects should fall back to their defaults
+		await expect(page.getByTestId('standup-sound-select')).toHaveValue('beeps');
+		await expect(page.getByTestId('done-sound-select')).toHaveValue('chimes');
+
+		const stored = await page.evaluate(() => ({
+			data: localStorage.getItem('onyourfeet:customSound'),
+			name: localStorage.getItem('onyourfeet:customSoundName')
+		}));
+		expect(stored.data).toBeNull();
+		expect(stored.name).toBeNull();
+	});
+
+	test('replace button triggers file picker (input is clickable)', async ({ page }) => {
+		await page.goto('/');
+		await page.locator('html[data-hydrated="true"]').waitFor();
+		await page.evaluate(() => {
+			localStorage.setItem('onyourfeet:customSound', 'data:audio/wav;base64,UklGRiQAAABXQVZF');
+			localStorage.setItem('onyourfeet:customSoundName', 'old.mp3');
+		});
+		await page.reload();
+		await page.locator('html[data-hydrated="true"]').waitFor();
+
+		await page.getByTestId('sound-settings-button').click();
+		// Use setInputFiles to simulate the picker selecting a new file
+		await page.getByTestId('sound-file-input').setInputFiles({
+			name: 'new-alarm.mp3',
+			mimeType: 'audio/mpeg',
+			buffer: Buffer.from([0xff, 0xfb, 0x90, 0x44])
+		});
+		await expect(page.getByTestId('custom-sound-name')).toHaveText('new-alarm.mp3');
+		const storedName = await page.evaluate(() =>
+			localStorage.getItem('onyourfeet:customSoundName')
+		);
+		expect(storedName).toBe('new-alarm.mp3');
+	});
 });
 
 test.describe('timer persistence', () => {

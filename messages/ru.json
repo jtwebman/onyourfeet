@@ -45,6 +45,9 @@
 	"sound_silent": "Без звука (только уведомление)",
 	"sound_custom_choose": "Свой файл…",
 	"sound_custom_saved": "Свой файл",
+	"sound_custom_current_label": "Текущий файл",
+	"sound_custom_replace": "Заменить",
+	"sound_custom_clear": "Удалить",
 	"sound_too_large": "Файл слишком большой (макс. 500 КБ).",
 	"sound_storage_error": "Не удалось сохранить — возможно, хранилище браузера переполнено.",
 

@@ -45,6 +45,9 @@
 	"sound_silent": "静音(仅通知)",
 	"sound_custom_choose": "自定义文件…",
 	"sound_custom_saved": "自定义文件",
+	"sound_custom_current_label": "当前文件",
+	"sound_custom_replace": "替换",
+	"sound_custom_clear": "清除",
 	"sound_too_large": "文件过大(最大 500 KB)。",
 	"sound_storage_error": "无法保存 —— 浏览器存储可能已满。",
 
