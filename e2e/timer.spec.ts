@@ -695,6 +695,27 @@ test.describe('language switcher', () => {
 	});
 });
 
+test.describe('GitHub link', () => {
+	test('appears in the top-right on the timer page', async ({ page }) => {
+		await gotoApp(page);
+		const link = page.getByTestId('github-link');
+		await expect(link).toBeVisible();
+		await expect(link).toHaveAttribute('href', 'https://github.com/jtwebman/onyourfeet');
+		await expect(link).toHaveAttribute('target', '_blank');
+		await expect(link).toHaveAttribute('rel', /noopener/);
+	});
+
+	test('is hidden on the why page', async ({ page }) => {
+		await gotoApp(page, '/en/why');
+		await expect(page.getByTestId('github-link')).toHaveCount(0);
+	});
+
+	test('still hidden on non-English why pages', async ({ page }) => {
+		await gotoApp(page, '/fr/why');
+		await expect(page.getByTestId('github-link')).toHaveCount(0);
+	});
+});
+
 test.describe('color scheme', () => {
 	test('applies dark variant classes when prefers-color-scheme is dark', async ({ page }) => {
 		await page.emulateMedia({ colorScheme: 'dark' });
