@@ -2,16 +2,34 @@
 
 > A dead-simple stand-up reminder and desk break timer for office workers. Start a timer (30, 45, or 60 minutes); when it ends, take a 5-minute walking break; repeat. Backed by 2023 Columbia research (Duran/Diaz et al.) showing 5-minute light walking every 30 minutes reduces post-meal blood sugar and blood pressure.
 
-The site is a static SvelteKit app with no accounts, no tracking, and no ads. It is available in 13 languages with URL-prefix routing (e.g., `/en/`, `/fr/`, `/ja/`). Source code is open under AGPL-3.0.
+The site is a static SvelteKit app with no accounts, no tracking, and no ads. It is available in 13 languages with URL-prefix routing (e.g., `/en/`, `/fr/`, `/ja/`). The content is identical across languages — only the UI labels and the Why page prose differ. Source code is open under AGPL-3.0.
 
-## Pages
+## Pages — English (canonical)
 
-- [Home (English)](https://onyourfeet.app/en/): The timer interface — pick a duration and start
-- [Why this exists (English)](https://onyourfeet.app/en/why): The peer-reviewed research behind short walking breaks, with full citations and honest caveats
+- [Home](https://onyourfeet.app/en/): The timer interface — pick a duration and start
+- [Why this exists](https://onyourfeet.app/en/why): The peer-reviewed research behind short walking breaks, with full citations and honest caveats
 
-## Source code
+## Pages — other languages
+
+- Spanish (Español): [Home](https://onyourfeet.app/es/) · [Why](https://onyourfeet.app/es/why)
+- Portuguese (Português, Brazilian): [Home](https://onyourfeet.app/pt/) · [Why](https://onyourfeet.app/pt/why)
+- French (Français): [Home](https://onyourfeet.app/fr/) · [Why](https://onyourfeet.app/fr/why)
+- German (Deutsch): [Home](https://onyourfeet.app/de/) · [Why](https://onyourfeet.app/de/why)
+- Italian (Italiano): [Home](https://onyourfeet.app/it/) · [Why](https://onyourfeet.app/it/why)
+- Dutch (Nederlands): [Home](https://onyourfeet.app/nl/) · [Why](https://onyourfeet.app/nl/why)
+- Polish (Polski): [Home](https://onyourfeet.app/pl/) · [Why](https://onyourfeet.app/pl/why)
+- Russian (Русский): [Home](https://onyourfeet.app/ru/) · [Why](https://onyourfeet.app/ru/why)
+- Japanese (日本語): [Home](https://onyourfeet.app/ja/) · [Why](https://onyourfeet.app/ja/why)
+- Korean (한국어): [Home](https://onyourfeet.app/ko/) · [Why](https://onyourfeet.app/ko/why)
+- Simplified Chinese (中文): [Home](https://onyourfeet.app/zh/) · [Why](https://onyourfeet.app/zh/why)
+- Hindi (हिन्दी): [Home](https://onyourfeet.app/hi/) · [Why](https://onyourfeet.app/hi/why)
+
+Non-English Why pages show an inline notice flagging that the prose is machine-translated and pointing readers to the English original as the source of truth.
+
+## Source code and releases
 
 - [GitHub repository](https://github.com/jtwebman/onyourfeet): AGPL-3.0-licensed source
+- [Releases and changelog](https://github.com/jtwebman/onyourfeet/releases): Version history with notes on every change since launch
 
 ## Key research the Why page cites
 
