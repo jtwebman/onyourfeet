@@ -705,14 +705,14 @@ test.describe('GitHub link', () => {
 		await expect(link).toHaveAttribute('rel', /noopener/);
 	});
 
-	test('is hidden on the why page', async ({ page }) => {
+	test('appears on the why page too (persistent site nav)', async ({ page }) => {
 		await gotoApp(page, '/en/why');
-		await expect(page.getByTestId('github-link')).toHaveCount(0);
+		await expect(page.getByTestId('github-link')).toBeVisible();
 	});
 
-	test('still hidden on non-English why pages', async ({ page }) => {
+	test('appears on non-English why pages too', async ({ page }) => {
 		await gotoApp(page, '/fr/why');
-		await expect(page.getByTestId('github-link')).toHaveCount(0);
+		await expect(page.getByTestId('github-link')).toBeVisible();
 	});
 });
 
