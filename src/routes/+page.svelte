@@ -126,7 +126,8 @@
 								? 'border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
 								: 'border-zinc-300 text-zinc-500 hover:border-zinc-500 dark:border-zinc-600 dark:text-zinc-300 dark:hover:border-zinc-500'}"
 						>
-							{formatInt(d)} {unitLabel}
+							{formatInt(d)}
+							{unitLabel}
 						</button>
 					{/each}
 				</div>
@@ -207,7 +208,7 @@
 			<div class="space-y-8">
 				<div class="text-sm text-zinc-500 dark:text-zinc-400">{m.timer_walk_it_out()}</div>
 				<div
-					class="font-mono text-7xl font-light tabular-nums text-emerald-700 dark:text-emerald-400"
+					class="font-mono text-7xl font-light text-emerald-700 tabular-nums dark:text-emerald-400"
 				>
 					{formatDuration(timer.secondsLeft)}
 				</div>

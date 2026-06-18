@@ -237,7 +237,9 @@
 			data-testid={target === 'standUp' ? 'standup-custom-row' : 'done-custom-row'}
 			class="mt-2 rounded-md border border-zinc-200 bg-zinc-50 p-2 dark:border-zinc-700 dark:bg-zinc-800/50"
 		>
-			<div class="text-[10px] font-medium text-zinc-500 uppercase tracking-wider dark:text-zinc-400">
+			<div
+				class="text-[10px] font-medium tracking-wider text-zinc-500 uppercase dark:text-zinc-400"
+			>
 				{m.sound_custom_current_label()}
 			</div>
 			{#if editingTarget === target}
@@ -246,7 +248,9 @@
 					bind:value={editingName}
 					onkeydown={onRenameKey}
 					onblur={saveRename}
-					data-testid={target === 'standUp' ? 'standup-custom-rename-input' : 'done-custom-rename-input'}
+					data-testid={target === 'standUp'
+						? 'standup-custom-rename-input'
+						: 'done-custom-rename-input'}
 					class="mt-0.5 w-full rounded border border-zinc-300 bg-white px-2 py-1 text-sm text-zinc-900 focus:border-emerald-500 focus:outline-none dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100"
 				/>
 				<div class="mt-1.5 flex gap-3">
@@ -254,7 +258,9 @@
 						type="button"
 						onmousedown={(e) => e.preventDefault()}
 						onclick={saveRename}
-						data-testid={target === 'standUp' ? 'standup-custom-rename-save' : 'done-custom-rename-save'}
+						data-testid={target === 'standUp'
+							? 'standup-custom-rename-save'
+							: 'done-custom-rename-save'}
 						class="text-xs text-emerald-700 underline hover:no-underline dark:text-emerald-400"
 					>
 						{m.sound_custom_rename_save()}
@@ -263,7 +269,9 @@
 						type="button"
 						onmousedown={(e) => e.preventDefault()}
 						onclick={cancelRename}
-						data-testid={target === 'standUp' ? 'standup-custom-rename-cancel' : 'done-custom-rename-cancel'}
+						data-testid={target === 'standUp'
+							? 'standup-custom-rename-cancel'
+							: 'done-custom-rename-cancel'}
 						class="text-xs text-zinc-500 underline hover:text-zinc-700 hover:no-underline dark:hover:text-zinc-300"
 					>
 						{m.sound_custom_rename_cancel()}

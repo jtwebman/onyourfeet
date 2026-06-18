@@ -19,7 +19,10 @@ const SCENARIOS: Array<{ name: string; path: string; scheme: 'light' | 'dark' }>
 
 for (const { name, path, scheme } of SCENARIOS) {
 	test(`screenshot ${name}`, async ({ browser }) => {
-		const ctx = await browser.newContext({ colorScheme: scheme, viewport: { width: 900, height: 700 } });
+		const ctx = await browser.newContext({
+			colorScheme: scheme,
+			viewport: { width: 900, height: 700 }
+		});
 		const page = await ctx.newPage();
 		await gotoApp(page, path);
 		await page.screenshot({ path: `screenshots/${name}.png`, fullPage: path.includes('/why') });

@@ -136,7 +136,7 @@
 		<section class="mt-12 space-y-4">
 			<h2 class="text-2xl font-semibold tracking-tight">{m.why_section_who()}</h2>
 			<blockquote
-				class="border-l-2 border-emerald-500 pl-4 italic text-zinc-700 dark:text-zinc-300"
+				class="border-l-2 border-emerald-500 pl-4 text-zinc-700 italic dark:text-zinc-300"
 			>
 				{m.why_who_quote()}<a
 					href="#cite-3"
@@ -158,11 +158,13 @@
 		</section>
 
 		<section class="mt-16 border-t border-zinc-200 pt-8 dark:border-zinc-800">
-			<h2 class="mb-4 text-sm font-semibold tracking-wider text-zinc-500 uppercase">{m.why_references()}</h2>
+			<h2 class="mb-4 text-sm font-semibold tracking-wider text-zinc-500 uppercase">
+				{m.why_references()}
+			</h2>
 			<ol class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
 				<li id="cite-1">
-					<span class="font-semibold text-zinc-700 dark:text-zinc-300">[1]</span> Duran AT, Friel CP,
-					Serafini MA, Ensari I, Cheung YK, Diaz KM.
+					<span class="font-semibold text-zinc-700 dark:text-zinc-300">[1]</span> Duran AT, Friel
+					CP, Serafini MA, Ensari I, Cheung YK, Diaz KM.
 					<em
 						>Breaking Up Prolonged Sitting to Improve Cardiometabolic Risk: Dose-Response Analysis
 						of a Randomized Crossover Trial.</em
@@ -195,8 +197,7 @@
 					<span class="font-semibold text-zinc-700 dark:text-zinc-300">[3]</span> Bull FC, Al-Ansari
 					SS, Biddle S, et al.
 					<em
-						>World Health Organization 2020 guidelines on physical activity and sedentary
-						behaviour.</em
+						>World Health Organization 2020 guidelines on physical activity and sedentary behaviour.</em
 					>
 					<em>British Journal of Sports Medicine</em>. 2020;54(24):1451–1462.
 					<a

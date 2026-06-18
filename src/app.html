@@ -19,8 +19,17 @@
 				} catch (e) {}
 			})();
 		</script>
-		<!-- HitsOnce analytics: first-party tracker served from /_stats on this domain. -->
-		<script src="/_stats" defer></script>
+		<!-- HitsOnce analytics: load the first-party tracker in production (skips localhost). -->
+		<script>
+			(function () {
+				var h = location.hostname;
+				if (h === 'localhost' || h === '127.0.0.1' || h.endsWith('.local')) return;
+				var s = document.createElement('script');
+				s.src = '/_stats';
+				s.defer = true;
+				document.head.appendChild(s);
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 

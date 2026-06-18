@@ -108,6 +108,7 @@ class TimerStore {
 		await this.ensureNotificationPermission();
 		if (!this.isDevMode) this.safeWrite(WORK_DURATION_KEY, String(this.workValue));
 		this.beginCountdown('working', this.workSeconds);
+		window.hitsonce?.('timer_start', this.workValue);
 	}
 
 	snooze() {
@@ -148,6 +149,7 @@ class TimerStore {
 		const alertStartedAt = Date.now();
 		this.persist({ phase: 'alert_work', workValue: this.workValue, alertStartedAt });
 		this.startAlertLoop(m.notify_time_to_stand());
+		window.hitsonce?.('timer_finish', this.workValue);
 	}
 
 	private fireDoneAlarm() {

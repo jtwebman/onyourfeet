@@ -14,6 +14,11 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 	}
+
+	interface Window {
+		/** HitsOnce analytics. Defined in production once the tracker loads. */
+		hitsonce?: (name: string, value?: string | number) => void;
+	}
 }
 
 export {};
